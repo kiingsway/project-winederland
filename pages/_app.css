@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --background-color: white;
+  --background-color-75: #CCCCCC;
+  --background-color-50: #888888;
+  --background-color-25: #444444;
+  --foreground-color: black;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: black;
+    --background-color-75: #444444;
+    --background-color-50: #888888;
+    --background-color-25: #CCCCCC;
+    --foreground-color: white;
+  }
+}
+
+:root {
+  --neutral-10: #1A1A1A;
+  --neutral-25-light: #333333;
+  --neutral-25: #333333;
+  --neutral-40: #666666;
+  --neutral-40-light: #666666;
+  --neutral-50: #888888;
+  --neutral-60: #999999;
+  --neutral-60-light: #999999;
+  --neutral-75: #CCCCCC;
+  --neutral-75-light: #CCCCCC;
+  --neutral-90: #E6E6E6;
+  --black: #000000;
+  --white: #FFFFFF;
+  --success-0: green;
+  --success-100: #98F5A9;
+  --error-0: #F598A8;
+  --error-100: #E72323;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --neutral-10: #E6E6E6;
+    --neutral-25: #CCCCCC;
+    --neutral-40: #999999;
+    --neutral-60: #666666;
+    --neutral-75: #333333;
+    --neutral-90: #1A1A1A;
+    --black: #FFFFFF;
+    --white: #000000;
+    --success-0: #98F5A9;
+    --success-100: green;
+    --success: #98F5A9;
+    --error-0: #E72323;
+    --error-100: #F598A8;
+  }
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Global Style */
+html {
+  overflow: hidden;
+  color-scheme: light;
+}
+
+* {
+  font-family: 'Jost' !important;
+}
+
+body {
+  color: rgb(var(--foreground-color));
+  background-color: rgb(var(--background-color));
+  overflow-x: hidden;
+  height: 100vh;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+.app-main-content {
+  /* height: '100%', display: 'flex', flexDirection: 'column', rowGap: 4 */
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+  height: 100%;
+}
