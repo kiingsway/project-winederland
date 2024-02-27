@@ -1,20 +1,16 @@
 import React from 'react';
-import Head from "next/head";
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Project Winederland",
-  description: "Uncork the Magic! A project for Event Planning class",
-};
+import Image from 'next/image';
 
 export default function Home(): JSX.Element {
   return (
     <div>
-      <Head><title>{metadata.title as string}</title></Head>
-
-      <span>
-        INTERVIEW SWAY APP Interview Sway App
-      </span>
+      <Image
+        src="https://picsum.photos/760/200"
+        // src="/Wine1.jpg"
+        width={760}
+        height={200}
+        alt='Winery Image'
+      />
     </div>
   );
 }

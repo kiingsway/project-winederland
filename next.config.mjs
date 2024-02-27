@@ -11,6 +11,16 @@ const nextConfig = {
     "rc-tree",
     "rc-util"
   ],
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'picsum.photos',
+        port: '',
+        pathname: '/760/200',
+      },
+    ],
+  },
   rewrites: async () => [
     {
       source: "/usdbrl",
