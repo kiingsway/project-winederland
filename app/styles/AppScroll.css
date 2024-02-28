@@ -1,0 +1,19 @@
+.AppScroll::-webkit-scrollbar {
+  width: 4px;
+  background-color: transparent;
+  border-radius: 4px;
+}
+
+.AppScroll::-webkit-scrollbar-thumb {
+  background-color: var(--neutral-40-light);
+  border-radius: 10px;
+  /* border: 3px solid var(--white); */
+}
+
+.AppScroll::-webkit-scrollbar-thumb:hover {
+  background-color: var(--neutral-60-light);
+}
+
+.AppScroll::-webkit-scrollbar-thumb:active {
+  background-color: var(--neutral-25-light);
+}

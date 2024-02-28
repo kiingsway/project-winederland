@@ -1,0 +1,52 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 24px;
+}
+
+.Font {
+  font-family: 'DM Serif Display' !important;
+  letter-spacing: 1px;
+  line-height: 1.2em;
+  font-size: 25px;
+  text-rendering: optimizeLegibility;
+}
+
+.Box {
+  font-family: 'Open Sans' !important;
+  background-color: #7E161080;
+  padding: 20px;
+  // margin: 0 20px;
+  line-height: 1.4em;
+  letter-spacing: 1.1pt;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Maps {
+  width: 100%;
+}
+
+.MapBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.Find {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  height: 300px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  overflow: auto;
+
+  & li {
+    padding-left: 15px;
+  }
+}
