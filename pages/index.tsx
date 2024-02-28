@@ -38,6 +38,11 @@ export default function Home(): JSX.Element {
         <div className={classNames([styles.Box, styles.Find, 'AppScroll'])}>
 
           <div style={{ display: 'flex', flexDirection: 'column', rowGap: 3, textAlign: 'left' }}>
+            <span>Date:</span>
+            <ul><li>March 15th, 2024</li></ul>
+          </div>
+
+          <div style={{ display: 'flex', flexDirection: 'column', rowGap: 3, textAlign: 'left' }}>
             <span>Address:</span>
             <ul>
               <li>425 Bloor St E, Toronto, ON M4X 1L7</li>
