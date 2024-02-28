@@ -40,7 +40,6 @@ export default function About(): JSX.Element {
                     <Avatar
                       key={index}
                       size={50}
-
                       style={{ borderRadius: '50%', cursor: 'default', backgroundColor: department_color }}>
                       {student.slice(0, 3).toUpperCase()}
                     </Avatar>

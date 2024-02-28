@@ -215,8 +215,7 @@ html {
 }
 
 .app-main {
-  /* padding: 10px 40px 0 40px; */
-  padding: 10px 40px;
+  padding: 8px 0;
   display: flex;
   justify-content: center;
 }
@@ -224,4 +223,8 @@ html {
 .app-main-content {
   width: 100%;
   max-width: 800px;
+}
+
+.app-content {
+  padding: 0px 20px;
 }

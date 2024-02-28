@@ -50,7 +50,9 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
         <div className='app-main'>
           <div className='app-main-content'>
             <AppNavigation />
-            <Component {...pageProps} />
+            <div className='app-content'>
+              <Component {...pageProps} />
+            </div>
             <AppFooter />
           </div>
         </div>

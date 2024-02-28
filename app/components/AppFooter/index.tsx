@@ -21,7 +21,7 @@ export default function AppFooter(): JSX.Element {
         preview={false}
         src={`./ILACIC_horiz_on-black.png`}
         alt='ILAC Logo'
-        width={150}
+        width={100}
       />
       <div className={styles.Main_Right}>
         <span>Follow us</span>
