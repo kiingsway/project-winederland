@@ -8,8 +8,6 @@ export default function Home(): JSX.Element {
 
   const [w, h] = [800, 200];
 
-  const iframe_src = `https://maps.google.com/maps?width=100%25&height=300&hl=en&q=43.6721418,-79.37624821570263+(My%20Business%20Name)&t=&z=15&ie=UTF8&iwloc=B&output=embed`;
-
   return (
     <div className={styles.App}>
       <div style={{ width: w, height: h }}>
@@ -34,7 +32,6 @@ export default function Home(): JSX.Element {
           alt='Winery Image'
         />
       </div>
-
 
       <div className={styles.MapBox}>
 

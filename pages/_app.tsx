@@ -3,12 +3,14 @@ import type { AppProps } from 'next/app';
 import '@/app/i18n';
 import './_app.css';
 import { IUseLanguage, useLanguage } from '@/app/hooks/useLanguage';
-import { ConfigProvider, notification, theme, Breadcrumb, Layout, Menu } from 'antd';
+import { ConfigProvider, theme, Layout } from 'antd';
 import useDarkMode from '@/app/hooks/useDarkMode';
 import AppNavigation from '@/app/components/AppNavigation';
 import Head from "next/head";
 import { useRouter } from 'next/router';
 import type { Metadata } from "next";
+import { splitCamelCase } from '@/app/services/helpers';
+import AppFooter from '@/app/components/AppFooter';
 
 export const metadata: Metadata = {
   title: "Project Winederland",
@@ -21,9 +23,8 @@ export const metadata: Metadata = {
   }]
 };
 
-const { Header, Content, Footer } = Layout;
-
 export interface IAppContext {
+  language: IUseLanguage;
 }
 
 export const AppContext = React.createContext<IAppContext | undefined>(undefined);
@@ -34,15 +35,13 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
 
   const language = useLanguage();
   const isDarkMode = useDarkMode();
-  const [api, contextHolder] = notification.useNotification();
+  const appProviderValue: IAppContext = { language };
 
-  const splitCamelCase = (str: string) => str.replace(/([a-z])([A-Z])/g, '$1 $2');
-
-  const path = !pathname || pathname === '/' ? '' : `${splitCamelCase(pathname.replace('/', ''))} | `;
-
-  const appProviderValue: IAppContext = {};
-
-  const page_title = `${path}${metadata.title as string}`;
+  const page_title = (() => {
+    const { title } = metadata as { title: string };
+    const path = splitCamelCase(pathname.replace('/', ''));
+    return path ? `${path} | ${title}` : title;
+  })();
 
   return (
     <ConfigProvider theme={{ algorithm: isDarkMode ? theme.darkAlgorithm : theme.defaultAlgorithm }}>
@@ -51,8 +50,8 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
         <div className='app-main'>
           <div className='app-main-content'>
             <AppNavigation />
-            {contextHolder}
             <Component {...pageProps} />
+            <AppFooter />
           </div>
         </div>
       </AppContext.Provider>

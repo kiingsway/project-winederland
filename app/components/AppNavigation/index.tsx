@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './AppNavigation.module.scss';
 import Image from 'next/image'
-import { Button } from 'antd';
 import { useRouter } from 'next/router';
+import Buttons from '../Buttons';
 
 export default function AppNavigation(): JSX.Element {
 
@@ -29,10 +29,11 @@ export default function AppNavigation(): JSX.Element {
       <div className={styles.Main_PagesLink}>
         {app_pages.map(app_page => {
           return (
-            <Button
+            <Buttons.Link
               key={app_page.key}
-              type='link'
-              onClick={app_page.onClick}>{app_page.key}</Button>
+              onClick={app_page.onClick}>
+              {app_page.key}
+            </Buttons.Link>
           );
         })}
       </div>
