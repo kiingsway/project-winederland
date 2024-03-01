@@ -1,14 +1,18 @@
 import React from 'react';
 import styles from './WineBar.module.scss';
-import { Col, Image, Row } from 'antd';
+import { Col, Grid, Image, Row } from 'antd';
 import { wine_sections } from '@/parameters';
+
+const { useBreakpoint } = Grid;
 
 export default function WineBar(): JSX.Element {
 
   const [w, h] = [800, 200];
+  const screens = useBreakpoint();
+  const isMobile = !screens.md;
 
   return (
-    <div className={styles.Main}>
+    <>
       <div style={{ width: w, height: h }}>
         <Image
           preview={false}
@@ -22,11 +26,11 @@ export default function WineBar(): JSX.Element {
       </div>
 
       {wine_sections.map(({ desc, image, key }, index) => (
-        <WineSection key={key} section={key} image={image} makeImageLeft={Boolean(index % 2)}>
+        <WineSection key={key} section={key} image={image} makeImageLeft={Boolean(index % 2)} isMobile={isMobile}>
           {desc}
         </WineSection>
       ))}
-    </div>
+    </>
   );
 }
 
@@ -34,9 +38,10 @@ interface WineSectionProps {
   section: string;
   image: string;
   makeImageLeft?: boolean;
+  isMobile: boolean;
 }
 
-function WineSection({ section, image, children, makeImageLeft }: React.PropsWithChildren<WineSectionProps>): JSX.Element {
+function WineSection({ section, image, children, makeImageLeft, isMobile }: React.PropsWithChildren<WineSectionProps>): JSX.Element {
 
   const WineImage = (): JSX.Element => (
     <Col span={24} md={10}>
@@ -50,8 +55,8 @@ function WineSection({ section, image, children, makeImageLeft }: React.PropsWit
 
   const style: React.CSSProperties = {
     display: 'flex',
-    textAlign: makeImageLeft ? 'right' : 'left',
-    justifyContent: makeImageLeft ? 'flex-end' : 'flex-start',
+    textAlign: isMobile ? 'center' : (makeImageLeft ? 'right' : 'left'),
+    justifyContent: isMobile ? 'center' : (makeImageLeft ? 'flex-end' : 'flex-start'),
   };
 
   const WineDescription = (): JSX.Element => {
@@ -75,7 +80,11 @@ function WineSection({ section, image, children, makeImageLeft }: React.PropsWit
           {section}
         </span>
       </Col>
-      {makeImageLeft ? <><WineImage /><WineDescription /></> : <><WineDescription /><WineImage /></>}
+      {isMobile ? <><WineImage /><WineDescription /></> : (
+        makeImageLeft ?
+          <><WineImage /><WineDescription /></> :
+          <><WineDescription /><WineImage /></>
+      )}
     </Row>
   );
 }
