@@ -58,7 +58,7 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
               <Component {...pageProps} />
             </div>
           </Content>
-          <Footer style={{ textAlign: 'center' }}>
+          <Footer className="app-footer">
             <AppFooter />
           </Footer>
         </Layout>
