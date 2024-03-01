@@ -10,9 +10,15 @@ export default function AppNavigation(): JSX.Element {
 
   const goHome = () => router.push('/');
 
-  const app_pages = [
+  interface IAppPage {
+    key: string;
+    onClick(): void;
+  }
+
+  const app_pages: IAppPage[] = [
     { key: 'Home', onClick: goHome },
     { key: 'Wine Bar', onClick: () => router.push('/WineBar') },
+    { key: 'Activities', onClick: () => router.push('/Activities') },
     { key: 'About us', onClick: () => router.push('/About') },
   ];
 

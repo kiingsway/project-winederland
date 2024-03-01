@@ -39,37 +39,3 @@ interface IStudent {
   name: string;
   department: TDepartments;
 }
-
-const noSortedStudents: IStudent[] = [
-  { department: 'Decoration and Marketing', name: 'Marcos' },
-  { department: 'Decoration and Marketing', name: 'Mateo' },
-  { department: 'Decoration and Marketing', name: 'Paryn' },
-  { department: 'Decoration and Marketing', name: 'Richard' },
-  { department: 'Decoration and Marketing', name: 'Etan' },
-  { department: 'Decoration and Marketing', name: 'Laura' },
-  { department: 'Managment', name: 'Alissa' },
-  { department: 'Managment', name: 'Rodrigo' },
-  { department: 'Managment', name: 'Lucas' },
-  { department: 'Managment', name: '-' },
-  { department: 'Managment', name: '-' },
-  { department: 'Managment', name: '-' },
-  { department: 'Managment', name: '-' },
-  { department: 'Activities', name: '-' },
-  { department: 'Activities', name: '-' },
-  { department: 'Activities', name: '-' },
-  { department: 'Activities', name: '-' },
-  { department: 'Activities', name: '-' },
-  { department: 'Activities', name: '-' },
-  { department: 'Food and Beverage', name: '-' },
-  { department: 'Food and Beverage', name: '-' },
-  { department: 'Food and Beverage', name: '-' },
-  { department: 'Food and Beverage', name: '-' },
-  { department: 'Food and Beverage', name: '-' },
-  { department: 'Food and Beverage', name: '-' },
-  { department: 'Food and Beverage', name: '-' },
-  { department: 'Food and Beverage', name: '-' },
-];
-
-export const students = noSortedStudents.sort((a, b) => a.name.localeCompare(b.name));
-
-export const departments = students.map(s => s.department).filter(onlyUnique).sort();
