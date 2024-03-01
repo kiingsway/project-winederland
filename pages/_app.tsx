@@ -53,7 +53,7 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
           <Header className='app-header'>
             <AppNavigation />
           </Header>
-          <Content style={{ padding: '0 48px' }} className='app-content'>
+          <Content  className='app-content'>
             <div className='app-content-main'>
               <Component {...pageProps} />
             </div>

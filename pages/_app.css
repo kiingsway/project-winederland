@@ -243,6 +243,7 @@ html {
 .app-content {
   max-width: 800px;
   padding: 0 48px;
+  width: 100%;
 }
 
 .app-content-main {
@@ -262,8 +263,9 @@ html {
   text-align: center;
   align-items: center;
   padding: 10px 20px;
-  width: 800px;
   margin-top: 10px;
+  width: 100%;
+  max-width: 800px;
 }
 
 body::-webkit-scrollbar {
