@@ -241,6 +241,11 @@ html {
 }
 
 .app-content {
+  max-width: 800px;
+  padding: 0 48px;
+}
+
+.app-content-main {
   padding: 0px 20px;
   margin-top: 10px;
   display: flex;
@@ -255,7 +260,10 @@ html {
 
 .app-footer {
   text-align: center;
-  padding: 10px 20px
+  align-items: center;
+  padding: 10px 20px;
+  width: 800px;
+  margin-top: 10px;
 }
 
 body::-webkit-scrollbar {

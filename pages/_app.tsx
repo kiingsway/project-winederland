@@ -49,12 +49,12 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
     <ConfigProvider theme={{ algorithm: isDarkMode ? theme.darkAlgorithm : theme.defaultAlgorithm }}>
       <Head><title>{page_title}</title></Head>
       <AppContext.Provider value={appProviderValue}>
-        <Layout>
+        <Layout style={{ alignItems: 'center' }}>
           <Header className='app-header'>
             <AppNavigation />
           </Header>
-          <Content style={{ padding: '0 48px' }}>
-            <div className='app-content'>
+          <Content style={{ padding: '0 48px' }} className='app-content'>
+            <div className='app-content-main'>
               <Component {...pageProps} />
             </div>
           </Content>
