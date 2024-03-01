@@ -3,7 +3,26 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
+  width: 100%;
+  max-width: 800px;
+
+  &_Logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    column-gap: 4px;
+
+    &_Slogan {
+      font-size: 12px;
+      line-height: 1em;
+      font-family: 'DM Serif Display' !important;
+      padding-bottom: 8px;
+      font-style: italic;
+      letter-spacing: 1pt;
+      white-space: nowrap;
+    }
+  }
 
   &_PagesLink {
     text-transform: uppercase;
@@ -44,4 +63,10 @@
       }
     }
   }
+}
+
+.Drawer {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
 }

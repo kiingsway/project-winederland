@@ -12,8 +12,12 @@ export default function WineBar(): JSX.Element {
       <div style={{ width: w, height: h }}>
         <Image
           preview={false}
-          src={`https://picsum.photos/${w}/${h}`}
-          alt='Winery Image'
+          src="./Wines.jpg"
+          alt='Wines Image'
+          height={h}
+          width={w}
+          style={{ objectPosition: '100% 100%' }}
+          className="app-image"
         />
       </div>
 

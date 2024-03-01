@@ -13,8 +13,12 @@ export default function Home(): JSX.Element {
       <div style={{ width: w, height: h }}>
         <Image
           preview={false}
-          src={`https://picsum.photos/${w}/${h}`}
+          src="./winefield.jpg"
           alt='Winery Image'
+          height={h}
+          width={w}
+          style={{ objectPosition: '100% 69%' }}
+          className="app-image"
         />
       </div>
       <span className={styles.Font}>Join us at March 15th</span>
@@ -28,8 +32,11 @@ export default function Home(): JSX.Element {
       <div style={{ width: w, height: h }}>
         <Image
           preview={false}
-          src={`https://picsum.photos/${w}/${h}`}
-          alt='Winery Image'
+          src="./ILAC LOVE.png"
+          alt='ILAC Love Sign'
+          height={h}
+          width={w}
+          className="app-image"
         />
       </div>
 

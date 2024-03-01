@@ -3,7 +3,7 @@ import type { AppProps } from 'next/app';
 import '@/app/i18n';
 import './_app.css';
 import { IUseLanguage, useLanguage } from '@/app/hooks/useLanguage';
-import { ConfigProvider, theme, Layout } from 'antd';
+import { ConfigProvider, theme, Layout, Menu } from 'antd';
 import useDarkMode from '@/app/hooks/useDarkMode';
 import AppNavigation from '@/app/components/AppNavigation';
 import Head from "next/head";
@@ -11,6 +11,8 @@ import { useRouter } from 'next/router';
 import type { Metadata } from "next";
 import { splitCamelCase } from '@/app/services/helpers';
 import AppFooter from '@/app/components/AppFooter';
+
+const { Header, Content, Footer } = Layout;
 
 export const metadata: Metadata = {
   title: "Project Winederland",
@@ -42,6 +44,27 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
     const path = splitCamelCase(pathname.replace('/', ''));
     return path ? `${path} | ${title}` : title;
   })();
+
+  return (
+    <ConfigProvider theme={{ algorithm: isDarkMode ? theme.darkAlgorithm : theme.defaultAlgorithm }}>
+      <Head><title>{page_title}</title></Head>
+      <AppContext.Provider value={appProviderValue}>
+        <Layout>
+          <Header className='app-header'>
+            <AppNavigation />
+          </Header>
+          <Content style={{ padding: '0 48px' }}>
+            <div className='app-content'>
+              <Component {...pageProps} />
+            </div>
+          </Content>
+          <Footer style={{ textAlign: 'center' }}>
+            <AppFooter />
+          </Footer>
+        </Layout>
+      </AppContext.Provider>
+    </ConfigProvider>
+  );
 
   return (
     <ConfigProvider theme={{ algorithm: isDarkMode ? theme.darkAlgorithm : theme.defaultAlgorithm }}>

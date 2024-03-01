@@ -12,8 +12,11 @@ export default function About(): JSX.Element {
       <div style={{ width: w, height: h }}>
         <Image
           preview={false}
-          src={`https://picsum.photos/${w}/${h}`}
-          alt='Winery Image'
+          src="./ILAC Toronto Campus.jpg"
+          alt='ILAC Toronto Campus'
+          height={h}
+          width={w}
+          className="app-image"
         />
       </div>
       <span className={styles.Description}>

@@ -225,6 +225,26 @@ html {
   max-width: 800px;
 }
 
+/* --------------------------------------------------- */
+.app-header {
+  height: 50px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  padding: 13px;
+}
+
 .app-content {
   padding: 0px 20px;
+  margin-top: 10px;
+}
+
+.app-image {
+  object-fit: cover;
 }

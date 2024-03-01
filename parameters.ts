@@ -1,4 +1,4 @@
-import { onlyUnique } from "./app/services/helpers";
+export const slogan = "Uncork the Magic!";
 
 export const instagram_url = "https://www.instagram.com/";
 export const tiktok_url = "https://www.tiktok.com/";
