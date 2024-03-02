@@ -2,21 +2,25 @@ import React from 'react';
 import styles from './AppFooter.module.scss';
 import { DateTime } from 'luxon';
 import { FaInstagram, FaTiktok } from "react-icons/fa6";
-import { Col, Row, Tooltip } from 'antd';
+import { Tooltip } from 'antd';
 import Buttons from '../Buttons';
 import { instagram_url, tiktok_url } from '@/parameters';
-import { Image } from 'antd';
+import { Image, Grid } from 'antd';
+
+const { useBreakpoint } = Grid;
 
 export default function AppFooter(): JSX.Element {
 
   const year = DateTime.now().toFormat('yyyy');
+  const screens = useBreakpoint();
+  const isMobile = !screens.md;
 
   return (
     <div className={styles.Main}>
-      <div className={styles.Main_Left}>
+      {isMobile ? <></> : <div className={styles.Main_Left}>
         <span>© {year} Winederland.</span>
         <span>All Rights Reserved</span>
-      </div>
+      </div>}
       <Image
         preview={false}
         src="./ILACIC_horiz_on-black.png"

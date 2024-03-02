@@ -1,4 +1,19 @@
 .Text {
+
+  &_Normal {
+    font-family: 'Open Sans' !important;
+    line-height: 1.3em;
+    letter-spacing: 1.1pt;
+    font-size: 12px;
+
+  }
+  
+  &_Box {
+    line-height: 1.4em;
+    letter-spacing: 1.1pt;
+    font-size: 16px;
+  }
+
   &_Section {
     font-family: 'DM Serif Display' !important;
     letter-spacing: 1px;
@@ -9,16 +24,12 @@
 }
 
 .Box {
-  font-family: 'Open Sans' !important;
   background-color: #7E161080;
   padding: 20px;
-  line-height: 1.4em;
-  letter-spacing: 1.1pt;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 16px;
 }
 
 .DetailsList {

@@ -1,15 +1,11 @@
 import React from 'react';
-import { Col, Image, Row } from 'antd';
+import { Col, Row } from 'antd';
 import styles from './Home.module.scss';
-import classNames from 'classnames';
 import '@/app/styles/AppScroll.css';
-import AppHighlightImage from '@/app/components/AppHighlightImage';
 import AppComponents from '@/app/components/AppComponents';
 import DetailsList, { IDetailsListItem } from '@/app/components/AppComponents/DetailsList';
 
 export default function Home(): JSX.Element {
-
-  const [w, h] = [800, 200];
 
   const detailsListItems: IDetailsListItem[] = [
     {
@@ -39,7 +35,7 @@ export default function Home(): JSX.Element {
 
   return (
     <>
-      <AppHighlightImage src="./winefield.jpg" alt="Winery Image" imageHeightPosition={69} />
+      <AppComponents.Image src="./winefield.jpg" alt="Winery Image" imageHeightPosition={69} />
       <AppComponents.Text.Section>Join us at March 15th</AppComponents.Text.Section>
       <AppComponents.Box>
         <AppComponents.Text.BoxText>

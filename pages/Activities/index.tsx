@@ -1,20 +1,11 @@
 import React from 'react';
-import { Image } from 'antd';
+import AppComponents from '@/app/components/AppComponents';
 
 export default function Activities(): JSX.Element {
 
-  const [w, h] = [800, 200];
-
   return (
     <>
-      <Image
-        preview={false}
-        src="./Blinding Wine.jpg"
-        alt="Blinding Wine"
-        height={h}
-        width={w}
-        className="app-image"
-      />
+      <AppComponents.Image src="./Blinding Wine.jpg" alt="Blinding Wine" />
     </>
   );
 }

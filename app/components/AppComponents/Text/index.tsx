@@ -1,12 +1,16 @@
 import React from 'react';
 import styles from '../style.module.scss';
 
-const BoxText = ({ children }: React.PropsWithChildren) => {
-  return <span>{children}</span>;
+interface Props {
+  style?: React.CSSProperties;
 }
 
-const Section = ({ children }: React.PropsWithChildren) => {
-  return <h1 className={styles.Text_Section}>{children}</h1>;
+const BoxText = ({ children, style }: React.PropsWithChildren<Props>) => {
+  return <span className={styles.Text_Normal} style={style}>{children}</span>;
+}
+
+const Section = ({ children, style }: React.PropsWithChildren<Props>) => {
+  return <h1 className={styles.Text_Section} style={style}>{children}</h1>;
 };
 
 const Text = { Section, BoxText };

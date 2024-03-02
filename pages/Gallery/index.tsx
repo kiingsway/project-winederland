@@ -1,20 +1,21 @@
 import React from 'react';
+import AppComponents from '@/app/components/AppComponents';
 import { Image } from 'antd';
+import styles from './Gallery.module.scss';
+import { images } from '@/parameters';
 
 export default function Gallery(): JSX.Element {
-
-  const [w, h] = [800, 200];
-
   return (
     <>
-      <Image
-        preview={false}
-        src="./Wine Photoshoot.jpeg"
-        alt="Wine Photoshoot"
-        height={h}
-        width={w}
-        className="app-image"
-      />
+      <AppComponents.Image src="./Wine Photoshoot.jpeg" alt="Wine Photoshoot" />
+      <div className={styles.Grid}>
+
+        {images.map(({ alt, src }) => (
+          <figure key={alt}>
+            <Image src={src} alt={alt} />
+          </figure>
+        ))}
+      </div>
     </>
   );
 }

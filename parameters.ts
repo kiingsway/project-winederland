@@ -27,15 +27,22 @@ export const wine_sections = [
   {
     key: "grape juice",
     image: "./grape-juice.webp",
-    desc: "Apple juice is a popular beverage made by pressing and extracting the liquid from apples. It's a refreshing and nutritious drink, often enjoyed for its sweet and tangy flavor. Apple juice can be made from various apple varieties, each contributing to its unique taste profile."
+    desc: "Grape juice is a non-alcoholic beverage made from crushed grapes. It's a sweet and flavorful drink enjoyed by all ages. It's rich in vitamins, antioxidants, and natural sugars, making it a healthy and refreshing choice."
   }
 ];
 
 export const description_about = `Winederland is an event sponsored by ILAC, organized yearly for a wine tasting extravaganza. It's a celebration of all things wine, where enthusiasts gather to explore a variety of wines from around the world. The event features tastings, masterclasses, and opportunities to learn from experts in the field. Whether you're a seasoned connoisseur or just beginning to discover the world of wine, Winederland offers an unforgettable experience that delights the senses and expands your palate. Join us for an unforgettable journey into the world of wine!`;
 
-type TDepartments = 'Food and Beverage' | 'Decoration and Marketing' | 'Activities' | 'Managment';
-
-interface IStudent {
-  name: string;
-  department: TDepartments;
+interface Image {
+  src: string;
+  alt: string;
 }
+export const images: Image[] = [
+  { alt: 'Draft of decoration on ILAC Building', src: './Decoration.png' },
+  { alt: 'Invitation Image', src: './Winederland Invitation.jpg' },
+  { alt: 'Fake Leaves', src: './Fake Leaves.jpg' },
+  { alt: 'Budget', src: './Budget.png' },
+  { alt: 'Wood', src: './Wood.jpg' },
+  { alt: 'Plants', src: './Plants.jpg' },
+  { alt: 'Plants2', src: './Plants2.jpg' },
+];

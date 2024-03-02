@@ -3,7 +3,7 @@ import type { AppProps } from 'next/app';
 import '@/app/i18n';
 import './_app.css';
 import { IUseLanguage, useLanguage } from '@/app/hooks/useLanguage';
-import { ConfigProvider, theme, Layout, Menu } from 'antd';
+import { ConfigProvider, theme, Layout } from 'antd';
 import useDarkMode from '@/app/hooks/useDarkMode';
 import AppNavigation from '@/app/components/AppNavigation';
 import Head from "next/head";
@@ -53,7 +53,7 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
           <Header className='app-header'>
             <AppNavigation />
           </Header>
-          <Content  className='app-content'>
+          <Content className='app-content'>
             <div className='app-content-main'>
               <Component {...pageProps} />
             </div>
@@ -64,22 +64,5 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
         </Layout>
       </AppContext.Provider>
     </ConfigProvider>
-  );
-
-  return (
-    <ConfigProvider theme={{ algorithm: isDarkMode ? theme.darkAlgorithm : theme.defaultAlgorithm }}>
-      <Head><title>{page_title}</title></Head>
-      <AppContext.Provider value={appProviderValue}>
-        <div className='app-main'>
-          <div className='app-main-content'>
-            <AppNavigation />
-            <div className='app-content'>
-              <Component {...pageProps} />
-            </div>
-            <AppFooter />
-          </div>
-        </div>
-      </AppContext.Provider>
-    </ConfigProvider >
   );
 }
