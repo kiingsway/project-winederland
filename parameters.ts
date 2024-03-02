@@ -36,13 +36,15 @@ export const description_about = `Winederland is an event sponsored by ILAC, org
 interface Image {
   src: string;
   alt: string;
+  width?: number;
+  height?: number;
 }
 export const images: Image[] = [
-  { alt: 'Draft of decoration on ILAC Building', src: './Decoration.png' },
-  { alt: 'Invitation Image', src: './Winederland Invitation.jpg' },
-  { alt: 'Fake Leaves', src: './Fake Leaves.jpg' },
-  { alt: 'Budget', src: './Budget.png' },
-  { alt: 'Wood', src: './Wood.jpg' },
-  { alt: 'Plants', src: './Plants.jpg' },
-  { alt: 'Plants2', src: './Plants2.jpg' },
+  { width: 1920, height: 1080, alt: 'Draft of decoration on ILAC Building', src: './Decoration.png' },
+  { width: 4500, height: 5265, alt: 'Invitation Image', src: './Winederland Invitation.jpg' },
+  { width: 960, height: 960, alt: 'Fake Leaves', src: './Fake Leaves.jpg' },
+  { width: 835, height: 488, alt: 'Budget', src: './Budget.png' },
+  { width: 1200, height: 1600, alt: 'Wood', src: './Wood.jpg' },
+  { width: 1200, height: 1600, alt: 'Plants', src: './Plants.jpg' },
+  { width: 1200, height: 1600, alt: 'Plants2', src: './Plants2.jpg' },
 ];
