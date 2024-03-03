@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@vercel/analytics": "^1.2.2",
     "antd": "^5.14.2",
     "classnames": "^2.5.1",
     "country-flag-icons": "^1.5.9",

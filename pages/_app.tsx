@@ -11,6 +11,7 @@ import { useRouter } from 'next/router';
 import type { Metadata } from "next";
 import { splitCamelCase } from '@/app/services/helpers';
 import AppFooter from '@/app/components/AppFooter';
+import { Analytics } from "@vercel/analytics/react"
 
 const { Header, Content, Footer } = Layout;
 
@@ -48,6 +49,7 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
   return (
     <ConfigProvider theme={{ algorithm: isDarkMode ? theme.darkAlgorithm : theme.defaultAlgorithm }}>
       <Head><title>{page_title}</title></Head>
+      <Analytics />
       <AppContext.Provider value={appProviderValue}>
         <Layout style={{ alignItems: 'center' }}>
           <Header className='app-header'>
