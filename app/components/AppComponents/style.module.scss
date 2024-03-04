@@ -5,9 +5,8 @@
     line-height: 1.3em;
     letter-spacing: 1.1pt;
     font-size: 12px;
-
   }
-  
+
   &_Box {
     line-height: 1.4em;
     letter-spacing: 1.1pt;
@@ -20,16 +19,19 @@
     line-height: 1.2em;
     font-size: 25px;
     text-rendering: optimizeLegibility;
+    color: white;
   }
 }
 
 .Box {
-  background-color: #7E161080;
+  background-color: rgb(80, 20, 20, 0.85);
+  backdrop-filter: blur(10px);
   padding: 20px;
-  text-align: center;
   display: flex;
+  text-align: center;
   justify-content: center;
-  align-items: center;
+  overflow: auto;
+  align-items: flex-start;
 }
 
 .DetailsList {

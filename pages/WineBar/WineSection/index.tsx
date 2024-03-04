@@ -25,20 +25,27 @@ export default function WineSection(p: React.PropsWithChildren<Props>): JSX.Elem
 
   const WineImage = (): JSX.Element => (
     <Col span={24} md={10}>
-      <Image
-        preview={false}
-        src={image}
-        alt={`${section} Image`}
-      />
+      <AppComponents.Box style={{ height: 205 }}>
+        <Image
+          height={165}
+          width={'100%'}
+          style={{ objectFit: 'cover' }}
+          preview={false}
+          src={image}
+          alt={`${section} Image`}
+        />
+      </AppComponents.Box>
     </Col>
   );
 
   const WineDescription = (): JSX.Element => {
     return (
       <Col span={24} md={14}>
-        <AppComponents.Text.BoxText style={style}>
-          {children}
-        </AppComponents.Text.BoxText>
+        <AppComponents.Box style={{ height: 205 }}>
+          <AppComponents.Text.BoxText style={style}>
+            {children}
+          </AppComponents.Text.BoxText>
+        </AppComponents.Box>
       </Col>
     );
   }

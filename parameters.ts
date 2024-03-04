@@ -40,11 +40,34 @@ interface Image {
   height?: number;
 }
 export const images: Image[] = [
-  { width: 1920, height: 1080, alt: 'Draft of decoration on ILAC Building', src: './Decoration.png' },
-  { width: 4500, height: 5265, alt: 'Invitation Image', src: './Winederland Invitation.jpg' },
-  { width: 960, height: 960, alt: 'Fake Leaves', src: './Fake Leaves.jpg' },
-  { width: 835, height: 488, alt: 'Budget', src: './Budget.png' },
-  { width: 1200, height: 1600, alt: 'Wood', src: './Wood.jpg' },
-  { width: 1200, height: 1600, alt: 'Plants', src: './Plants.jpg' },
-  { width: 1200, height: 1600, alt: 'Plants2', src: './Plants2.jpg' },
+  { alt: 'Draft of decoration on ILAC Building', src: './Decoration.png' },
+  { alt: 'Invitation Image', src: './Winederland Invitation.jpg' },
+  { alt: 'Fake Leaves', src: './Fake Leaves.jpg' },
+  { alt: 'Budget', src: './Budget.png' },
+  { alt: 'Wood', src: './Wood.jpg' },
+  { alt: 'Plants', src: './Plants.jpg' },
+  { alt: 'Plants2', src: './Plants2.jpg' },
+  { alt: 'Food Budget', src: './Food Material.png' },
+  { alt: 'Event Map', src: './Event Map.jpg' },
+];
+
+export const maps_url = `https://maps.google.com/maps?width=100%25&height=300&hl=en&q=43.6721418,-79.37624821570263+(ILAC+Dreaming+Building)&t=&z=15&ie=UTF8&iwloc=B&output=embed`;
+
+interface IActivity {
+  image: string;
+  title: string;
+  desc: string;
+}
+
+export const activities: IActivity[] = [
+  {
+    title: 'Wine Tasting/Sommelier',
+    image: './Blind Wine Tasting.jpg',
+    desc: "Discover your inner sommelier! Join us for a unique wine tasting experience. Our guided activity will take you through a selection of carefully curated wines, helping you learn about different grape varieties, wine regions, and tasting techniques. Our experts will be on hand to guide you, enhancing your tasting skills. By the end, you'll feel confident in selecting and pairing wines like a pro. Don't miss this opportunity to become a wine connoisseur!"
+  },
+  {
+    title: 'Guess the Wine Making Process',
+    image: './Wine Making Process.png',
+    desc: "Test your wine knowledge with our 'Guess the Wine Making Process' activity. Learn about the intricate steps involved in making wine while trying to match each wine with its correct production process. From harvesting to fermentation and aging, challenge yourself to identify the unique characteristics of each wine and the methods used to create them. A fun and educational experience for wine enthusiasts of all levels!"
+  },
 ];

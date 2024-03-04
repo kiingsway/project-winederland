@@ -18,7 +18,7 @@ export default function AppFooter(): JSX.Element {
   return (
     <div className={styles.Main}>
       {isMobile ? <></> : <div className={styles.Main_Left}>
-        <span>© {year} Winederland.</span>
+        <span>© {year} Winederland</span>
         <span>All Rights Reserved</span>
       </div>}
       <Image

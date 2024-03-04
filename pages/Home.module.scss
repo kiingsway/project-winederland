@@ -13,22 +13,6 @@
   text-rendering: optimizeLegibility;
 }
 
-.Box {
-  font-family: 'Open Sans' !important;
-  background-color: #7E161080;
-  padding: 20px;
-  line-height: 1.4em;
-  letter-spacing: 1.1pt;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.Maps {
-  width: 100%;
-}
-
 .MapBox {
   display: flex;
   flex-direction: row;

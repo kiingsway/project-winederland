@@ -1,10 +1,15 @@
 import React from 'react';
 import styles from '../style.module.scss';
 
-export default function Box({ children }: React.PropsWithChildren): JSX.Element {
+interface Props {
+  style?: React.CSSProperties;
+}
+
+export default function Box({ children, style }: React.PropsWithChildren<Props>): JSX.Element {
+
   return (
-    <div className={styles.Box}>
+    <div style={style} className={'app-scroll ' + styles.Box} >
       {children}
-    </div>
+    </div >
   );
 }

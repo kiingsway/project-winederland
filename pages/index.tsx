@@ -4,6 +4,8 @@ import styles from './Home.module.scss';
 import '@/app/styles/AppScroll.css';
 import AppComponents from '@/app/components/AppComponents';
 import DetailsList, { IDetailsListItem } from '@/app/components/AppComponents/DetailsList';
+import Maps from '@/app/components/Maps';
+import { maps_url } from '@/parameters';
 
 export default function Home(): JSX.Element {
 
@@ -53,16 +55,7 @@ export default function Home(): JSX.Element {
 
         <Col span={24} md={8}>
           <AppComponents.Box>
-            <div className={styles.Maps}>
-              <iframe
-                width="100%"
-                height="300"
-                scrolling="no"
-                frameBorder={0}
-                marginHeight={0}
-                marginWidth={0}
-                src="https://maps.google.com/maps?width=100%25&height=300&hl=en&q=43.6721418,-79.37624821570263+(ILAC+Dreaming+Building)&t=&z=15&ie=UTF8&iwloc=B&output=embed" />
-            </div>
+            <Maps maps_url={maps_url} />
           </AppComponents.Box>
         </Col>
 

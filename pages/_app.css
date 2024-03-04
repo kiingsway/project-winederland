@@ -199,7 +199,6 @@ html {
 
 body {
   color: rgb(var(--foreground-color));
-  background-color: rgb(var(--background-color));
   overflow-x: hidden;
   height: 100vh;
 }
@@ -212,6 +211,11 @@ html {
   html {
     color-scheme: dark;
   }
+}
+
+.app {
+  align-items: center;
+  background-color: transparent;
 }
 
 .app-main {
@@ -228,22 +232,23 @@ html {
 /* --------------------------------------------------- */
 .app-header {
   height: 50px;
-  position: sticky;
   top: 0;
   z-index: 1;
-  width: 100%;
+  width: 101vw;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(10px);
   padding: 13px;
+  position: fixed;
 }
 
 .app-content {
   max-width: 800px;
-  padding: 0 48px;
   width: 100%;
+  padding: 70px 0 100px;
+  min-height: 90vh;
 }
 
 .app-content-main {
@@ -260,12 +265,18 @@ html {
 }
 
 .app-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   text-align: center;
   align-items: center;
   padding: 10px 20px;
   margin-top: 10px;
-  width: 100%;
-  max-width: 800px;
+  width: 102vw;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  bottom: 0;
 }
 
 body::-webkit-scrollbar {
@@ -284,5 +295,24 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 body::-webkit-scrollbar-thumb:active {
+  background-color: var(--neutral-25-light);
+}
+
+.app-scroll::-webkit-scrollbar {
+  width: 4px;
+  background-color: transparent;
+  border-radius: 4px;
+}
+
+.app-scroll::-webkit-scrollbar-thumb {
+  background-color: var(--neutral-40-light);
+  border-radius: 10px;
+}
+
+.app-scroll::-webkit-scrollbar-thumb:hover {
+  background-color: var(--neutral-60-light);
+}
+
+.app-scroll::-webkit-scrollbar-thumb:active {
   background-color: var(--neutral-25-light);
 }

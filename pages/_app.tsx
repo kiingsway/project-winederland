@@ -12,6 +12,7 @@ import type { Metadata } from "next";
 import { getPathName } from '@/app/services/helpers';
 import AppFooter from '@/app/components/AppFooter';
 import { Analytics } from "@vercel/analytics/react"
+import background_image from '@/public/Winery Barrels Background.jpg';
 
 const { Header, Content, Footer } = Layout;
 
@@ -46,12 +47,14 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
     return path ? `${path} | ${title}` : title;
   })();
 
+  const backgroundImage = `url('${background_image.src}')`;
+
   return (
     <ConfigProvider theme={{ algorithm: isDarkMode ? theme.darkAlgorithm : theme.defaultAlgorithm }}>
       <Head><title>{page_title}</title></Head>
-      <Analytics />
+      {/* <Analytics /> */}
       <AppContext.Provider value={appProviderValue}>
-        <Layout style={{ alignItems: 'center' }}>
+        <Layout className='app' style={{ backgroundImage }}>
           <Header className='app-header'>
             <AppNavigation />
           </Header>

@@ -26,7 +26,7 @@ export default function AppNavigation(): JSX.Element {
   const Tabs = (): JSX.Element => {
     const closeDrawer = (): void => openNavDrawer ? closeNav() : undefined;
     return (
-      <>{tabs.map(({ key, onClick }) => {
+      <>{tabs.map(({ key, title, onClick }) => {
 
         const onPress = () => { closeDrawer(); onClick() };
         const path = getPathName(pathname);
@@ -34,7 +34,7 @@ export default function AppNavigation(): JSX.Element {
 
         return (
           <Buttons.Link key={key} onClick={onPress} selected={selected}>
-            {key}
+            {title}
           </Buttons.Link>
         );
       })}</>
