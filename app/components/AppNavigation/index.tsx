@@ -7,46 +7,43 @@ import { Drawer, Grid } from 'antd';
 import { IoMenu } from "react-icons/io5";
 import useBoolean from '@/app/hooks/useBoolean';
 import { slogan } from '@/parameters';
+import appPages from './appPagesData';
+import { getPathName } from '@/app/services/helpers';
 
 const { useBreakpoint } = Grid;
 
 export default function AppNavigation(): JSX.Element {
 
-  const router = useRouter();
+  const { push: routerPush, pathname } = useRouter();
   const screens = useBreakpoint();
   const [openNavDrawer, { setTrue: openNav, setFalse: closeNav }] = useBoolean();
   const isPhone = !screens.md;
 
-  React.useEffect(() => {
+  const goHome = () => routerPush('/');
 
-  }, [screens]);
+  const tabs = appPages(routerPush);
 
-  const goHome = () => router.push('/');
+  const Tabs = (): JSX.Element => {
+    const closeDrawer = (): void => openNavDrawer ? closeNav() : undefined;
+    return (
+      <>{tabs.map(({ key, onClick }) => {
 
-  interface IAppPage {
-    key: string;
-    onClick(): void;
-  }
+        const onPress = () => { closeDrawer(); onClick() };
+        const path = getPathName(pathname);
+        const selected = path === key || (!path && key === 'Home');
 
-  const app_pages: IAppPage[] = [
-    { key: 'Home', onClick: goHome },
-    { key: 'Wine Bar', onClick: () => router.push('/WineBar') },
-    { key: 'Activities', onClick: () => router.push('/Activities') },
-    { key: 'Gallery', onClick: () => router.push('/Gallery') },
-    { key: 'About us', onClick: () => router.push('/About') },
-  ];
+        return (
+          <Buttons.Link key={key} onClick={onPress} selected={selected}>
+            {key}
+          </Buttons.Link>
+        );
+      })}</>
+    );
+  };
 
   const Navigation = (): JSX.Element | JSX.Element[] => {
     if (isPhone) return <Buttons.Icon size='large' type='text' onClick={openNav} icon={<IoMenu fontSize={24} />} />;
-    else return app_pages.map(app_page => {
-      return (
-        <Buttons.Link
-          key={app_page.key}
-          onClick={app_page.onClick}>
-          {app_page.key}
-        </Buttons.Link>
-      );
-    });
+    else return <Tabs />;
   }
 
   return (
@@ -66,16 +63,7 @@ export default function AppNavigation(): JSX.Element {
         <Navigation />
         <Drawer title="Pages" onClose={closeNav} open={openNavDrawer} width={180}>
           <div className={styles.Drawer}>
-            {app_pages.map(app_page => {
-              const onClick = () => { closeNav(); app_page.onClick(); };
-              return (
-                <Buttons.Link
-                  key={app_page.key}
-                  onClick={onClick}>
-                  {app_page.key}
-                </Buttons.Link>
-              );
-            })}
+            <Tabs />
           </div>
         </Drawer>
       </div>

@@ -135,15 +135,31 @@
     transition: transform 0.3s ease;
   }
 
-  &:hover {
+  &_Selected {
+    cursor: default;
     color: #FFFFFF !important;
 
+    &:active {
+      color: #FFFFFF !important;
+    }
+
     &::after {
-      transform: scaleX(1);
+      transform: scaleX(1) !important;
     }
   }
 
-  &:active {
-    color: #777777 !important;
+  &_NotSelected {
+
+    &:hover {
+      color: #FFFFFF !important;
+
+      &::after {
+        transform: scaleX(1);
+      }
+    }
+
+    &:active {
+      color: #777777;
+    }
   }
 }

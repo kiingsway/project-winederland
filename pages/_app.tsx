@@ -9,7 +9,7 @@ import AppNavigation from '@/app/components/AppNavigation';
 import Head from "next/head";
 import { useRouter } from 'next/router';
 import type { Metadata } from "next";
-import { splitCamelCase } from '@/app/services/helpers';
+import { getPathName } from '@/app/services/helpers';
 import AppFooter from '@/app/components/AppFooter';
 import { Analytics } from "@vercel/analytics/react"
 
@@ -42,7 +42,7 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
 
   const page_title = (() => {
     const { title } = metadata as { title: string };
-    const path = splitCamelCase(pathname.replace('/', ''));
+    const path = getPathName(pathname, { splitCamelCase: true });
     return path ? `${path} | ${title}` : title;
   })();
 

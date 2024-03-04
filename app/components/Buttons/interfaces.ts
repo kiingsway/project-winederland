@@ -37,4 +37,4 @@ export type ButtonsMenuFunction = ButtonsFunction<ButtonsMenuProps>;
 export type DropdownValueFunction = ButtonsFunction<DropdownValueProps>;
 export type SelectorFunction = ButtonsFunction<React.PropsWithChildren<SelectorProps>>;
 export type LanguagesFunction = ButtonsFunction<LanguagesProps>;
-export type LinkFunction = ButtonsFunction<ButtonProps>;
+export type LinkFunction = ButtonsFunction<ButtonProps & { selected?: boolean; }>;

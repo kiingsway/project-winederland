@@ -8,11 +8,18 @@ import { IoMdGlobe } from 'react-icons/io';
 import { ButtonsIconFunction, ButtonsMenuFunction, ButtonsTabFunction, DropdownValueFunction, LanguagesFunction, LinkFunction, SelectorFunction } from './interfaces';
 import { AppContext, IAppContext } from '@/pages/_app';
 
-const Menu: ButtonsMenuFunction = props =>
-  <button type='button' className={styles.Menu} {...props}><TbMenu2 /></button>;
+const Menu: ButtonsMenuFunction = props => (
+  <button type='button' className={styles.Menu} {...props}>
+    <TbMenu2 />
+  </button>
+);
 
-const DropdownValue: DropdownValueFunction = ({ icon, label }) =>
-  <div className={styles.Selector_Value}>{icon}<span>{label}</span></div>;
+const DropdownValue: DropdownValueFunction = ({ icon, label }) => (
+  <div className={styles.Selector_Value}>
+    {icon}
+    <span>{label}</span>
+  </div>
+);
 
 const Icon: ButtonsIconFunction = p => {
 
@@ -61,21 +68,28 @@ const Languages: LanguagesFunction = p => {
 
 const Link: LinkFunction = p => {
 
-  const { children: ch, icon: ic, className: cn, ...props } = p;
+  const { children: ch, icon: ic, className, selected, ...props } = p;
 
-  const { children, ...otherProps } = ch ?
+  const moreProps = ch ?
     { icon: undefined, children: <>{ic}{ch}</> } :
     { icon: ic, children: <></> };
+
+  const classes = classNames([
+    classNames,
+    styles.Icon,
+    styles.Link,
+    {[styles.Link_Selected]: selected},
+    {[styles.Link_NotSelected]: !selected},
+  ])
 
   return (
     <Button
       {...props}
-      {...otherProps}
-      className={classNames([styles.Icon, styles.Link, cn])}
+      {...moreProps}
       type='link'
-      rel='noopener noreferrer'>
-      {children}
-    </Button>
+      rel='noopener noreferrer'
+      className={classes}
+    />
   );
 }
 

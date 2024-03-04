@@ -20,3 +20,12 @@ export function getRandomDarkColor(): string {
   }
   return color;
 }
+
+interface GetPathNameOptionsProps {
+  splitCamelCase: boolean;
+}
+
+export const getPathName = (pathname: string, options?: GetPathNameOptionsProps): string => {
+  const p = pathname.replace('/', '');
+  return options?.splitCamelCase ? splitCamelCase(p) : p;
+};
