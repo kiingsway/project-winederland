@@ -9,18 +9,14 @@
   &_Logo {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-end;
-    column-gap: 4px;
+    align-items: center;
+    column-gap: 30px;
 
-    &_Slogan {
-      font-size: 12px;
-      line-height: 1em;
-      font-family: 'DM Serif Display' !important;
-      padding-bottom: 8px;
-      font-style: italic;
-      letter-spacing: 1pt;
-      white-space: nowrap;
+    &_Left {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-end;
     }
   }
 
@@ -31,6 +27,16 @@
     flex-direction: row;
     column-gap: 20px;
   }
+}
+
+.Slogan {
+  font-size: 12px;
+  line-height: 1em;
+  font-family: 'DM Serif Display' !important;
+  padding-bottom: 8px;
+  font-style: italic;
+  letter-spacing: 1pt;
+  white-space: nowrap;
 }
 
 .Drawer {

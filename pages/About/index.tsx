@@ -1,13 +1,12 @@
-import { description_about } from '@/parameters';
+import { appImages, description_about } from '@/parameters';
 import React from 'react';
 import AppComponents from '@/app/components/AppComponents';
 
 export default function About(): JSX.Element {
 
-
   return (
     <>
-      <AppComponents.Image src="./ILAC Dreaming Building.jpg" alt="ILAC Dreaming Building" />
+      <AppComponents.Image {...appImages.About} />
       <AppComponents.Box>
         <AppComponents.Text.BoxText>
           {description_about}

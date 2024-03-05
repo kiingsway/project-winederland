@@ -52,7 +52,7 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
   return (
     <ConfigProvider theme={{ algorithm: isDarkMode ? theme.darkAlgorithm : theme.defaultAlgorithm }}>
       <Head><title>{page_title}</title></Head>
-      {/* <Analytics /> */}
+      <Analytics />
       <AppContext.Provider value={appProviderValue}>
         <Layout className='app' style={{ backgroundImage }}>
           <Header className='app-header'>

@@ -1,12 +1,11 @@
 import React from 'react';
 import styles from './AppNavigation.module.scss';
-import Image from 'next/image'
 import { useRouter } from 'next/router';
 import Buttons from '../Buttons';
-import { Drawer, Grid } from 'antd';
+import { Drawer, Grid, Image } from 'antd';
 import { IoMenu } from "react-icons/io5";
 import useBoolean from '@/app/hooks/useBoolean';
-import { slogan } from '@/parameters';
+import { appImages, slogan } from '@/parameters';
 import appPages from './appPagesData';
 import { getPathName } from '@/app/services/helpers';
 
@@ -49,15 +48,11 @@ export default function AppNavigation(): JSX.Element {
   return (
     <div className={styles.Main}>
       <div className={styles.Main_Logo}>
-        <Image
-          src="/Winederland White logo.png"
-          width={175}
-          height={45}
-          alt="Winederland Logo"
-          onClick={goHome}
-          style={{ cursor: 'pointer' }}
-        />
-        <span className={styles.Main_Logo_Slogan}>{slogan}</span>
+        <div className={styles.Main_Logo_Left}>
+          <WinederlandLogo onClick={goHome} />
+          <Slogan />
+        </div>
+        <ILACLogo />
       </div>
       <div className={styles.Main_PagesLink}>
         <Navigation />
@@ -70,3 +65,24 @@ export default function AppNavigation(): JSX.Element {
     </div>
   );
 }
+
+const WinederlandLogo = ({ onClick }: { onClick: () => void; }) => (
+  <Image
+    {...appImages.WinederlandLogo}
+    width={175}
+    height={45}
+    onClick={onClick}
+    style={{ cursor: 'pointer' }}
+  />
+);
+
+const Slogan = () => <span className={styles.Slogan}>{slogan}</span>;
+
+const ILACLogo = () => (
+  <Image
+    {...appImages.ILACLogo}
+    preview={false}
+    width={132}
+    wrapperStyle={{ height: 50 }}
+  />
+);

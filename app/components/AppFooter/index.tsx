@@ -4,7 +4,7 @@ import { DateTime } from 'luxon';
 import { FaInstagram, FaTiktok } from "react-icons/fa6";
 import { Tooltip } from 'antd';
 import Buttons from '../Buttons';
-import { instagram_url, tiktok_url } from '@/parameters';
+import { appImages, instagram_url, tiktok_url } from '@/parameters';
 import { Image, Grid } from 'antd';
 
 const { useBreakpoint } = Grid;
@@ -22,10 +22,9 @@ export default function AppFooter(): JSX.Element {
         <span>All Rights Reserved</span>
       </div>}
       <Image
+        {...appImages.ILACLogo}
         preview={false}
-        src="./ILACIC_horiz_on-black.png"
-        alt="ILAC Logo"
-        width={100}
+        width={150}
       />
       <div className={styles.Main_Right}>
         <span>Follow us</span>

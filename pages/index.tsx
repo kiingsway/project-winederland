@@ -1,11 +1,10 @@
 import React from 'react';
 import { Col, Row } from 'antd';
-import styles from './Home.module.scss';
 import '@/app/styles/AppScroll.css';
 import AppComponents from '@/app/components/AppComponents';
 import DetailsList, { IDetailsListItem } from '@/app/components/AppComponents/DetailsList';
 import Maps from '@/app/components/Maps';
-import { maps_url } from '@/parameters';
+import { appImages, maps_url } from '@/parameters';
 
 export default function Home(): JSX.Element {
 
@@ -37,7 +36,7 @@ export default function Home(): JSX.Element {
 
   return (
     <>
-      <AppComponents.Image src="./winefield.jpg" alt="Winery Image" imageHeightPosition={69} />
+      <AppComponents.Image {...appImages.Home} imageHeightPosition={69} />
       <AppComponents.Text.Section>Join us on March 15</AppComponents.Text.Section>
       <AppComponents.Box>
         <AppComponents.Text.BoxText>

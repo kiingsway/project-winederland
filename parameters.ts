@@ -39,17 +39,25 @@ interface Image {
   width?: number;
   height?: number;
 }
+
 export const images: Image[] = [
-  { alt: 'Draft of decoration on ILAC Building', src: './Decoration.png' },
   { alt: 'Invitation Image', src: './Winederland Invitation.jpg' },
-  { alt: 'Fake Leaves', src: './Fake Leaves.jpg' },
-  { alt: 'Budget', src: './Budget.png' },
-  { alt: 'Wood', src: './Wood.jpg' },
-  { alt: 'Plants', src: './Plants.jpg' },
-  { alt: 'Plants2', src: './Plants2.jpg' },
-  { alt: 'Food Budget', src: './Food Material.png' },
   { alt: 'Event Map', src: './Event Map.jpg' },
+  { alt: 'Draft of decoration on ILAC Building', src: './Decoration.png' },
+  { alt: 'Love Sign Decoration', src: './Love Sign Decoration.png' },
+  { alt: 'Invitation Image', src: './Invitation Image.png' },
+  // { alt: 'Image', src: './Image.jpg' },
 ];
+
+export const appImages = {
+  Home: { alt: "Winery Image", src: "./winefield.jpg" },
+  About: { alt: "ILAC Dreaming Building", src: "./ILAC Dreaming Building.jpg" },
+  Activities: { alt: "Blinding Wine", src: "./Blinding Wine.jpg" },
+  WineBar: { alt: "Wines Image", src: "./Wines.jpg" },
+  Gallery: { alt: "Wine Photoshoot", src: "./Wine Photoshoot.jpeg" },
+  WinederlandLogo: { alt: "Winederland White Logo", src: "./Winederland White Logo.png" },
+  ILACLogo: { alt: "ILAC Logo", src: "./ILAC Logo.png" },
+}
 
 export const maps_url = `https://maps.google.com/maps?width=100%25&height=300&hl=en&q=43.6721418,-79.37624821570263+(ILAC+Dreaming+Building)&t=&z=15&ie=UTF8&iwloc=B&output=embed`;
 
