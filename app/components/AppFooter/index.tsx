@@ -17,15 +17,15 @@ export default function AppFooter(): JSX.Element {
 
   return (
     <div className={styles.Main}>
-      {isMobile ? <></> : <div className={styles.Main_Left}>
+      <div className={styles.Main_Left}>
         <span>© {year} Winederland</span>
         <span>All Rights Reserved</span>
-      </div>}
-      <Image
+      </div>
+      {/* <Image
         {...appImages.ILACLogo}
         preview={false}
         width={150}
-      />
+      /> */}
       <div className={styles.Main_Right}>
         <span>Follow us</span>
         <div className={styles.Main_Right_Social}>

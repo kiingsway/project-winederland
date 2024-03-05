@@ -55,7 +55,7 @@ export const appImages = {
   Activities: { alt: "Blinding Wine", src: "./Blinding Wine.jpg" },
   WineBar: { alt: "Wines Image", src: "./Wines.jpg" },
   Gallery: { alt: "Wine Photoshoot", src: "./Wine Photoshoot.jpeg" },
-  WinederlandLogo: { alt: "Winederland White Logo", src: "./Winederland White Logo.png" },
+  WinederlandLogo: { alt: "Winederland White Logo", src: "./Winederland White logo.png" },
   ILACLogo: { alt: "ILAC Logo", src: "./ILAC Logo.png" },
 }
 

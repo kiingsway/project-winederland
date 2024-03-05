@@ -198,7 +198,7 @@ html {
 }
 
 body {
-  color: rgb(var(--foreground-color));
+  color: white;
   overflow-x: hidden;
   height: 100vh;
 }

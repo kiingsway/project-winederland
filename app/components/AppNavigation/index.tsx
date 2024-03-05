@@ -68,7 +68,8 @@ export default function AppNavigation(): JSX.Element {
 
 const WinederlandLogo = ({ onClick }: { onClick: () => void; }) => (
   <Image
-    {...appImages.WinederlandLogo}
+  {...appImages.WinederlandLogo}
+    preview={false}
     width={175}
     height={45}
     onClick={onClick}
