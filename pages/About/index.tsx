@@ -7,12 +7,14 @@ export default function About(): JSX.Element {
 
   return (
     <>
-      <AppComponents.Image src="./ILAC Toronto Campus.jpg" alt="ILAC Toronto Campus" />
+      <AppComponents.Image src="./ILAC Dreaming Building.jpg" alt="ILAC Dreaming Building" />
       <AppComponents.Box>
         <AppComponents.Text.BoxText>
           {description_about}
         </AppComponents.Text.BoxText>
+
       </AppComponents.Box>
+      <div style={{ height: 180 }} />
     </>
   );
 }

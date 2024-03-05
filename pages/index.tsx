@@ -38,7 +38,7 @@ export default function Home(): JSX.Element {
   return (
     <>
       <AppComponents.Image src="./winefield.jpg" alt="Winery Image" imageHeightPosition={69} />
-      <AppComponents.Text.Section>Join us at March 15th</AppComponents.Text.Section>
+      <AppComponents.Text.Section>Join us on March 15</AppComponents.Text.Section>
       <AppComponents.Box>
         <AppComponents.Text.BoxText>
           Winederland will be an event for wine enthusiasts. Come and experience the finest selections of wine available. Indulge in a journey through the world of wines, exploring unique flavors and discovering new favorites. Join us for a memorable evening filled with exquisite wines and delightful company. Cheers to a night of Winederland!
