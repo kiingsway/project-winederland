@@ -198,9 +198,13 @@ html {
 }
 
 body {
-  color: white;
+  color: white !important;
   overflow-x: hidden;
   height: 100vh;
+}
+
+span, p {
+  color: #FFFFFFCC;
 }
 
 html {

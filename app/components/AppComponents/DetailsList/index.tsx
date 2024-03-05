@@ -21,8 +21,8 @@ export default function DetailsList({ items, colon }: Props): JSX.Element {
         return (
           <React.Fragment key={label}>
 
-            <Col span={24} md={description ? 8 : 24} className={styles.DetailsList_Item_Label} style={{marginTop: description ? 0 : 20}}>
-              {label}{colon ? ':' : ''}
+            <Col span={24} md={description ? 8 : 24} className={styles.DetailsList_Item_Label} style={{ marginTop: description ? 0 : 20 }}>
+              <span>{label}{colon ? ':' : ''}</span>
             </Col>
 
             {!description ? <></> : <Col span={24} md={24 - 8}>
@@ -32,7 +32,7 @@ export default function DetailsList({ items, colon }: Props): JSX.Element {
                 ))}
               </div>
             </Col>}
-            
+
           </React.Fragment>
         );
       })}
