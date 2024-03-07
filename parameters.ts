@@ -1,7 +1,7 @@
 export const slogan = "Uncork the Magic!";
 
-export const instagram_url = "https://www.instagram.com/";
-export const tiktok_url = "https://www.tiktok.com/";
+export const instagram_url = "https://www.instagram.com/winederland__/";
+export const tiktok_url = "https://www.tiktok.com/@winederland_ilac/";
 
 export const wine_sections = [
   {
@@ -77,5 +77,20 @@ export const activities: IActivity[] = [
     title: 'Guess the Wine Making Process',
     image: './Wine Making Process.png',
     desc: "Test your wine knowledge with our 'Guess the Wine Making Process' activity. Learn about the intricate steps involved in making wine while trying to match each wine with its correct production process. From harvesting to fermentation and aging, challenge yourself to identify the unique characteristics of each wine and the methods used to create them. A fun and educational experience for wine enthusiasts of all levels!"
+  },
+  {
+    title: "Mapping Game",
+    image: "./Pin Map.png",
+    desc: "Players are asked a wine-related question. They then have to place a pin on a world map to indicate their answer. The player who gets closest to the correct location wins.",
+  },
+  {
+    title: "Ain and Win",
+    image: "./Ring Toss.png",
+    desc: "In this game, players try to toss rings onto the necks of wine bottles. Each successful toss earns points, and the player with the highest score after a set number of tosses wins.",
+  },
+  {
+    title: "Cork Contest",
+    image: "./Corks in the Jar.webp",
+    desc: "A jar or container is filled with wine corks, and players have to guess the number of corks inside. The player who guesses closest to the actual number wins a prize.",
   },
 ];

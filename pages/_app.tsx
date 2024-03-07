@@ -4,7 +4,6 @@ import '@/app/i18n';
 import './_app.css';
 import { IUseLanguage, useLanguage } from '@/app/hooks/useLanguage';
 import { ConfigProvider, theme, Layout } from 'antd';
-import useDarkMode from '@/app/hooks/useDarkMode';
 import AppNavigation from '@/app/components/AppNavigation';
 import Head from "next/head";
 import { useRouter } from 'next/router';
@@ -38,7 +37,6 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
   const { pathname } = useRouter();
 
   const language = useLanguage();
-  const isDarkMode = useDarkMode();
   const appProviderValue: IAppContext = { language };
 
   const page_title = (() => {
@@ -50,7 +48,7 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
   const backgroundImage = `url('${background_image.src}')`;
 
   return (
-    <ConfigProvider theme={{ algorithm: isDarkMode ? theme.darkAlgorithm : theme.defaultAlgorithm }}>
+    <ConfigProvider theme={{ algorithm: theme.darkAlgorithm }}>
       <Head><title>{page_title}</title></Head>
       <Analytics />
       <AppContext.Provider value={appProviderValue}>

@@ -41,7 +41,7 @@ export default function WineSection(p: React.PropsWithChildren<Props>): JSX.Elem
   const WineDescription = (): JSX.Element => {
     return (
       <Col span={24} md={14}>
-        <AppComponents.Box style={{ height: 205 }}>
+        <AppComponents.Box style={{ height: 205, width: '100%' }}>
           <AppComponents.Text.BoxText style={style}>
             {children}
           </AppComponents.Text.BoxText>

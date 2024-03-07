@@ -27,9 +27,7 @@ export default function DetailsList({ items, colon }: Props): JSX.Element {
 
             {!description ? <></> : <Col span={24} md={24 - 8}>
               <div className={styles.DetailsList_Item_Desc}>
-                {description.split('\n').map((line, index) => (
-                  <p key={index}>{line}</p>
-                ))}
+                {description.split('\n').map((line, index) => <p key={index}>{line}</p>)}
               </div>
             </Col>}
 

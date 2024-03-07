@@ -31,11 +31,8 @@ export default function AppNavigation(): JSX.Element {
         const path = getPathName(pathname);
         const selected = path === key || (!path && key === 'Home');
 
-        return (
-          <Buttons.Link key={key} onClick={onPress} selected={selected}>
-            {title}
-          </Buttons.Link>
-        );
+        return <Buttons.Link key={key} onClick={onPress} selected={selected}>{title}</Buttons.Link>;
+
       })}</>
     );
   };
@@ -56,7 +53,7 @@ export default function AppNavigation(): JSX.Element {
       </div>
       <div className={styles.Main_PagesLink}>
         <Navigation />
-        <Drawer title="Pages" onClose={closeNav} open={openNavDrawer} width={180}>
+        <Drawer title={<h4 className={styles.Drawer_Title}>Pages</h4>} onClose={closeNav} open={openNavDrawer} width={180} style={{ backgroundColor: '#222222' }}>
           <div className={styles.Drawer}>
             <Tabs />
           </div>
@@ -68,7 +65,7 @@ export default function AppNavigation(): JSX.Element {
 
 const WinederlandLogo = ({ onClick }: { onClick: () => void; }) => (
   <Image
-  {...appImages.WinederlandLogo}
+    {...appImages.WinederlandLogo}
     preview={false}
     width={175}
     height={45}
