@@ -5,8 +5,9 @@ export async function getFollowers(): Promise<Record<TSocialMedia, number | unde
 
   const instagram = await getIGFollowers();
   const tiktok = await getTiktokLikes();
+  const whatsapp = undefined;
 
-  return { instagram, tiktok };
+  return { instagram, tiktok, whatsapp };
 }
 
 type TFollowersLikes = number | undefined;

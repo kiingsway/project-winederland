@@ -14,13 +14,13 @@ interface Props {
 export default function SocialPosts({ socialMedia }: Props): JSX.Element {
 
   const { socialmedia_followers } = React.useContext(AppContext) as IAppContext;
-  const [followers, setFollowers] = React.useState<Record<TSocialMedia, number | undefined>>({ instagram: undefined, tiktok: undefined });
+  const [followers, setFollowers] = React.useState<Record<TSocialMedia, number | undefined>>({ instagram: undefined, tiktok: undefined, whatsapp: undefined });
 
   React.useEffect(() => {
     setFollowers(prev => {
       const instagram = socialmedia_followers?.instagram || prev.instagram;
       const tiktok = socialmedia_followers?.tiktok || prev.tiktok;
-      return { instagram, tiktok };
+      return { instagram, tiktok, whatsapp: prev.whatsapp };
     });
   }, [socialmedia_followers]);
 
