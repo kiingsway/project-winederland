@@ -7,16 +7,19 @@ export const slogan = "Uncork the Magic!";
 export const socialmedia_usernames: Record<TSocialMedia, string> = {
   instagram: "winederland__",
   tiktok: "winederland_ilac",
+  whatsapp: ""
 };
 
 export const socialmedia_urls: Record<TSocialMedia, string> = {
   instagram: `https://www.instagram.com/${socialmedia_usernames.instagram}/`,
   tiktok: `https://www.tiktok.com/@${socialmedia_usernames.tiktok}/`,
+  whatsapp: "https://chat.whatsapp.com/IzV0DKeklUlBIIULpDjaBu",
 };
 
 export const socialmedia_profile: Record<TSocialMedia, string> = {
   instagram: "./Winederland Invitation.jpg",
   tiktok: "./ttk profile.jpeg",
+  whatsapp: ""
 };
 
 export const images: IImage[] = [
@@ -35,7 +38,7 @@ export const socialmedia_posts: Record<TSocialMedia, IImage[]> = {
   tiktok: [
     { alt: 'Invitation Video Thumbnail', src: './Invitation Video Thumbnail.png' },
   ],
-
+  whatsapp: [],
 };
 
 export const wine_sections = [

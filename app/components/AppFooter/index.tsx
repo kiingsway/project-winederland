@@ -5,10 +5,11 @@ import { FaInstagram, FaTiktok } from "react-icons/fa6";
 import { Tooltip } from 'antd';
 import Buttons from '../Buttons';
 import { socialmedia_urls, socialmedia_usernames } from '@/parameters';
+import { FaWhatsapp } from "react-icons/fa";
 
 export default function AppFooter(): JSX.Element {
 
-  const { instagram: insta_url, tiktok: tiktok_url } = socialmedia_urls;
+  const { instagram: insta_url, tiktok: tiktok_url, whatsapp: whatsapp_url } = socialmedia_urls;
   const year = DateTime.now().toFormat('yyyy');
 
   return (
@@ -27,6 +28,9 @@ export default function AppFooter(): JSX.Element {
           </Tooltip>
           <Tooltip title={`Tiktok: @${socialmedia_usernames.tiktok}`}>
             <Buttons.Link className={styles.Main_Right_Social_Button} size="large" icon={<FaTiktok />} href={tiktok_url} />
+          </Tooltip>
+          <Tooltip title={`WhatsApp`}>
+            <Buttons.Link className={styles.Main_Right_Social_Button} size="large" icon={<FaWhatsapp />} href={whatsapp_url} />
           </Tooltip>
         </div>
       </Center>

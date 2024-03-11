@@ -17,7 +17,7 @@ export interface IAppPageData {
 // eslint-disable-next-line no-unused-vars
 export type TAppPages = (push: (path: string) => void) => IAppPageData[];
 
-export type TSocialMedia = 'instagram' | 'tiktok';
+export type TSocialMedia = 'instagram' | 'tiktok' | 'whatsapp';
 
 export interface IImage {
   src: string;
