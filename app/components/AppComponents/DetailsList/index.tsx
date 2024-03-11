@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '../style.module.scss';
 import { Col, Row } from 'antd';
-import '../../../styles/AppScroll.css'
+import '../../../styles/AppScroll.css';
 
 export interface IDetailsListItem {
   label: string;

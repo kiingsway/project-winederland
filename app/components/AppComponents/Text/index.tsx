@@ -7,7 +7,7 @@ interface Props {
 
 const BoxText = ({ children, style }: React.PropsWithChildren<Props>) => {
   return <span className={styles.Text_Normal} style={style}>{children}</span>;
-}
+};
 
 const Section = ({ children, style }: React.PropsWithChildren<Props>) => {
   return <h1 className={styles.Text_Section} style={style}>{children}</h1>;

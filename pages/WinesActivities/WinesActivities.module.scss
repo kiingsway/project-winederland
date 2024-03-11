@@ -1,0 +1,101 @@
+.WineContainer {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  background-color: #555555AA;
+  border-radius: 4px;
+  row-gap: 10px;
+  width: 100%;
+  height: 100%;
+  min-height: 155px;
+  transition: all 200ms ease-in-out;
+  cursor: pointer;
+
+
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  }
+
+  &_Details {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    color: #AAA;
+
+    & h2 {
+      font-size: 18px;
+      font-weight: 500;
+      color: #CCC;
+      word-break: break-word;
+      text-align: left;
+    }
+  }
+}
+
+.ProductLabel {
+  display: flex;
+  flex-direction: row;
+  column-gap: 8px;
+}
+
+.ProductModal {
+  display: flex;
+  flex-direction: row;
+  column-gap: 10px;
+  padding: 15px 0;
+
+  &_Content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+  }
+
+  &_Actions {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  &_Image {
+    flex-shrink: 0;
+  }
+
+  &_Details {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    padding: 25px 0;
+
+    &_Label {
+      display: flex;
+      column-gap: 9px;
+      align-items: center;
+
+      & h4 {
+        font-weight: 500;
+      }
+      & span {
+        font-weight: 300;
+      }
+    }
+
+    &_Country {
+      display: flex;
+      column-gap: 10px;
+    }
+
+    & small {
+      color: #9A9A9A;
+      font-weight: 300;
+      line-height: 1.4em;
+    }
+
+    & h2 {
+      font-size: 22px;
+      line-height: 1em;
+    }
+  }
+}

@@ -11,32 +11,14 @@ const nextConfig = {
     "rc-tree",
     "rc-util"
   ],
-  images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'picsum.photos',
-        port: '',
-        pathname: '/*/*',
-      },
-    ],
-  },
   rewrites: async () => [
     {
-      source: "/usdbrl",
-      destination: "https://www.google.com/search?q=usd+to+brl",
+      source: "/instagram_page",
+      destination: "https://www.instagram.com/winederland__/",
     },
     {
-      source: "/usdcad",
-      destination: "https://www.google.com/search?q=usd+to+cad",
-    },
-    {
-      source: "/usdeur",
-      destination: "https://www.google.com/search?q=usd+to+eur",
-    },
-    {
-      source: '/',
-      destination: '/Home',
+      source: "/tiktok_page",
+      destination: "https://www.tiktok.com/@winederland_ilac/",
     },
   ],
 };

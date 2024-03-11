@@ -15,12 +15,14 @@ export interface ILanguageItem {
 export interface IUseLanguage {
   selected: ILanguageItem;
   items: ILanguageItem[];
+  // eslint-disable-next-line no-unused-vars
   change: (lang: TLanguages) => Promise<TFunction<"translation", undefined>>;
 }
 
 export function useLanguage(defaultLang: TLanguages = 'en'): IUseLanguage {
 
-  React.useEffect(() => { defaultLang !== 'en' ? changeLanguage(defaultLang) : undefined; }, []);
+  if (defaultLang !== 'en') changeLanguage(defaultLang);
+  // React.useEffect(() => { defaultLang !== 'en' ? changeLanguage(defaultLang) : undefined; }, []);
 
   const { i18n } = useTranslation();
 
@@ -34,7 +36,7 @@ export function useLanguage(defaultLang: TLanguages = 'en'): IUseLanguage {
     {
       key: 'br',
       icon: <BR width={16} />,
-      label: "Português (Brasileiro)",
+      label: "Português",
       onClick: () => changeLanguage('br'),
     },
     {

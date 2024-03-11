@@ -1,7 +1,41 @@
+import { TImages, TImage, TSocialMedia, IImage, IActivity } from "./interfaces";
+import background_image from '@/public/Winery Barrels Background.jpg';
+
 export const slogan = "Uncork the Magic!";
 
-export const instagram_url = "https://www.instagram.com/winederland__/";
-export const tiktok_url = "https://www.tiktok.com/@winederland_ilac/";
+export const socialmedia_usernames: Record<TSocialMedia, string> = {
+  instagram: "winederland__",
+  tiktok: "winederland_ilac",
+};
+
+export const socialmedia_urls: Record<TSocialMedia, string> = {
+  instagram: `https://www.instagram.com/${socialmedia_usernames.instagram}/`,
+  tiktok: `https://www.tiktok.com/@${socialmedia_usernames.tiktok}/`,
+};
+
+export const socialmedia_profile: Record<TSocialMedia, string> = {
+  instagram: "./Winederland Invitation.jpg",
+  tiktok: "./ttk profile.jpeg",
+};
+
+export const images: IImage[] = [
+  { alt: 'Winederland Invitation', src: './Winederland Invitation.jpg' },
+  { alt: 'Event Map', src: './Event Map.jpg' },
+  { alt: 'Draft of decoration on ILAC Building', src: './Decoration.png' },
+  { alt: 'Love Sign Decoration', src: './Love Sign Decoration.png' },
+  { alt: 'Invitation Image', src: './Invitation Image.png' },
+  { alt: 'Invitation Video Thumbnail', src: './Invitation Video Thumbnail.png' },
+];
+
+export const socialmedia_posts: Record<TSocialMedia, IImage[]> = {
+  instagram: [
+    { alt: 'Winederland Invitation', src: './Winederland Invitation.jpg' },
+  ],
+  tiktok: [
+    { alt: 'Invitation Video Thumbnail', src: './Invitation Video Thumbnail.png' },
+  ],
+
+};
 
 export const wine_sections = [
   {
@@ -33,23 +67,8 @@ export const wine_sections = [
 
 export const description_about = `Winederland is an event sponsored by ILAC, organized yearly for a wine tasting extravaganza. It's a celebration of all things wine, where enthusiasts gather to explore a variety of wines from around the world. The event features tastings, masterclasses, and opportunities to learn from experts in the field. Whether you're a seasoned connoisseur or just beginning to discover the world of wine, Winederland offers an unforgettable experience that delights the senses and expands your palate. Join us for an unforgettable journey into the world of wine!`;
 
-interface Image {
-  src: string;
-  alt: string;
-  width?: number;
-  height?: number;
-}
-
-export const images: Image[] = [
-  { alt: 'Invitation Image', src: './Winederland Invitation.jpg' },
-  { alt: 'Event Map', src: './Event Map.jpg' },
-  { alt: 'Draft of decoration on ILAC Building', src: './Decoration.png' },
-  { alt: 'Love Sign Decoration', src: './Love Sign Decoration.png' },
-  { alt: 'Invitation Image', src: './Invitation Image.png' },
-  // { alt: 'Image', src: './Image.jpg' },
-];
-
-export const appImages = {
+export const appImages: Record<TImages, TImage> = {
+  AppBackground: { alt: "App Background Winery Image", src: background_image.src },
   Home: { alt: "Winery Image", src: "./winefield.jpg" },
   About: { alt: "ILAC Dreaming Building", src: "./ILAC Dreaming Building.jpg" },
   Activities: { alt: "Blinding Wine", src: "./Blinding Wine.jpg" },
@@ -57,15 +76,9 @@ export const appImages = {
   Gallery: { alt: "Wine Photoshoot", src: "./Wine Photoshoot.jpeg" },
   WinederlandLogo: { alt: "Winederland White Logo", src: "./Winederland White logo.png" },
   ILACLogo: { alt: "ILAC Logo", src: "./ILAC Logo.png" },
-}
+};
 
 export const maps_url = `https://maps.google.com/maps?width=100%25&height=300&hl=en&q=43.6721418,-79.37624821570263+(ILAC+Dreaming+Building)&t=&z=15&ie=UTF8&iwloc=B&output=embed`;
-
-interface IActivity {
-  image: string;
-  title: string;
-  desc: string;
-}
 
 export const activities: IActivity[] = [
   {

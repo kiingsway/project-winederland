@@ -75,23 +75,24 @@ const Link: LinkFunction = p => {
     { icon: ic, children: <></> };
 
   const classes = classNames([
-    classNames,
+    className,
     styles.Icon,
     styles.Link,
     {[styles.Link_Selected]: selected},
     {[styles.Link_NotSelected]: !selected},
-  ])
+  ]);
 
   return (
     <Button
       {...props}
       {...moreProps}
-      type='link'
-      rel='noopener noreferrer'
+      type="link"
+      rel="noopener noreferrer"
+      target="_blank"
       className={classes}
     />
   );
-}
+};
 
 const Buttons = { Tab, Icon, Menu, Languages, Link };
 

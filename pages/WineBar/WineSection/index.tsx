@@ -48,7 +48,7 @@ export default function WineSection(p: React.PropsWithChildren<Props>): JSX.Elem
         </AppComponents.Box>
       </Col>
     );
-  }
+  };
 
   return (
     <Row gutter={[16, 16]} className={styles.WineSection}>

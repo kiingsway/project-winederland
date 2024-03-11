@@ -5,6 +5,11 @@ import AppComponents from '@/app/components/AppComponents';
 import DetailsList, { IDetailsListItem } from '@/app/components/AppComponents/DetailsList';
 import Maps from '@/app/components/Maps';
 import { appImages, maps_url } from '@/parameters';
+import { InstagramEmbed, TikTokEmbed } from 'react-social-media-embed';
+import { FaInstagram, FaTiktok } from "react-icons/fa6";
+import styles from './Home.module.scss';
+import Buttons from '@/app/components/Buttons';
+import SocialPosts from '@/app/components/SocialPosts';
 
 export default function Home(): JSX.Element {
 
@@ -43,6 +48,25 @@ export default function Home(): JSX.Element {
           Winederland will be an event for wine enthusiasts. Come and experience the finest selections of wine available. Indulge in a journey through the world of wines, exploring unique flavors and discovering new favorites. Join us for a memorable evening filled with exquisite wines and delightful company. Cheers to a night of Winederland!
         </AppComponents.Text.BoxText>
       </AppComponents.Box>
+
+      <AppComponents.Text.Section>Follow us</AppComponents.Text.Section>
+
+      <Row gutter={[16, 16]}>
+
+        <Col span={24} md={12}>
+          <AppComponents.Box className={styles.SocialMediaBox}>
+            <SocialPosts socialMedia='instagram' />
+          </AppComponents.Box>
+        </Col>
+
+        <Col span={24} md={12}>
+          <AppComponents.Box className={styles.SocialMediaBox}>
+            <SocialPosts socialMedia='tiktok' />
+          </AppComponents.Box>
+        </Col>
+
+      </Row>
+
       <AppComponents.Text.Section>How to get there</AppComponents.Text.Section>
       <Row gutter={[16, 16]}>
 

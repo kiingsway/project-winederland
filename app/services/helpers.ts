@@ -4,8 +4,6 @@ export function rawText(text?: string | number): string {
   return String(text).normalize('NFKD').replace(/[\u0300-\u036f]/g, "").toLowerCase();
 }
 
-export const splitCamelCase = (str: string) => !str ? "" : str.replace(/([a-z])([A-Z])/g, '$1 $2');
-
 export function onlyUnique<T>(value: T, index: number, self: T[]): boolean {
   return self.indexOf(value) === index;
 }
@@ -31,6 +29,8 @@ interface GetPathNameOptionsProps {
   splitCamelCase: boolean;
 }
 
+export const splitCamelCase = (str: string) => !str ? "" : str.replace(/([a-z])([A-Z])/g, '$1 $2');
+
 export const getPathName = (pathname: string, options?: GetPathNameOptionsProps): string => {
   const p = pathname.replace('/', '');
   return options?.splitCamelCase ? splitCamelCase(p) : p;
@@ -39,3 +39,8 @@ export const getPathName = (pathname: string, options?: GetPathNameOptionsProps)
 export function makeKey(txt?: string | number): string {
   return rawText(txt).replace(/[^a-zA-Z0-9\s-]/g, '').replaceAll(' ', '-');
 }
+
+export const linkProps = {
+  target: "_blank",
+  rel: "noopener noreferrer",
+};

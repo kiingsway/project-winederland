@@ -10,12 +10,12 @@ export default function Activities(): JSX.Element {
     <>
       <AppComponents.Image  {...appImages.Activities} />
       {activities.map(({ desc, image, title }, index) => {
-        const key = makeKey(title)
+        const key = makeKey(title);
         return (
           <WineSection key={key} section={title} image={image} makeImageLeft={Boolean(index % 2)}>
             {desc}
           </WineSection>
-        )
+        );
       })}
     </>
   );

@@ -1,0 +1,81 @@
+.Main {
+  width: 100%;
+  border: 1px solid #555555AA;
+  border-radius: 4px;
+  background-color: #555555AA;
+  min-width: 320px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+  overflow: hidden;
+  color: #CCCCCC;
+  transition: all 200ms ease-in-out;
+
+  &_Posts {
+    transition: all 100ms ease-in-out;
+    border-top: 1px solid rgba(253, 253, 253, 0.12);
+
+    &_Image {
+      object-fit: cover;
+      object-position: 100% 0%;
+    }
+  }
+
+  &:hover {
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  }
+
+  &_AppIcon {
+    display: flex;
+    justify-content: flex-end;
+
+    & svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &_Header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 16px;
+    margin: 0 24px 24px 24px;
+
+    &>* {
+      flex: 1 0 auto;
+    }
+
+    &_Profile {
+
+      & img {
+        image-rendering: crisp-edges;
+      }
+    }
+
+    &_Description {
+      display: flex;
+      flex-direction: column;
+      row-gap: 4px;
+      width: 100%;
+
+      &>h4,
+      >span {
+        text-align: left;
+      }
+
+      &>h4 {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-weight: 500;
+        font-size: 16px;
+      }
+
+      &>span {
+        color: #999999;
+      }
+    }
+  }
+}
