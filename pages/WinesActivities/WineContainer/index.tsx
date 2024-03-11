@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from '../WinesActivities.module.scss';
 import { Image, Tooltip } from 'antd';
-import { IProduct } from '..';
 import { FaWineBottle } from "react-icons/fa";
 import { MdLocalDrink } from 'react-icons/md';
+import { IProduct } from '@/interfaces';
 
 interface Props {
   product: IProduct;
@@ -11,6 +11,8 @@ interface Props {
 }
 
 export default function WineContainer({ product, onClick }: Props): JSX.Element {
+
+  if (!product) return <></>;
 
   const alcohol = product.alcohol ? `${product.alcohol}%` : 'Non-alcoholic';
 

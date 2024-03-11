@@ -5,13 +5,8 @@ import { FaInstagram, FaTiktok } from "react-icons/fa6";
 import { Tooltip } from 'antd';
 import Buttons from '../Buttons';
 import { socialmedia_urls, socialmedia_usernames } from '@/parameters';
-import { AppContext, IAppContext } from '@/pages/_app';
-import { useTranslation } from 'react-i18next';
 
 export default function AppFooter(): JSX.Element {
-
-  const { t } = useTranslation();
-  const app = React.useContext(AppContext) as IAppContext;
 
   const { instagram: insta_url, tiktok: tiktok_url } = socialmedia_urls;
   const year = DateTime.now().toFormat('yyyy');
@@ -36,10 +31,6 @@ export default function AppFooter(): JSX.Element {
         </div>
       </Center>
 
-      {/* <Right>
-        <Buttons.Languages language={app.language.selected} t={t} />
-      </Right> */}
-
     </div>
   );
 }
@@ -52,12 +43,6 @@ const Left = ({ children }: React.PropsWithChildren): JSX.Element => (
 
 const Center = ({ children }: React.PropsWithChildren): JSX.Element => (
   <div className={styles.Main_Center}>
-    {children}
-  </div>
-);
-
-const Right = ({ children }: React.PropsWithChildren): JSX.Element => (
-  <div className={styles.Main_Right}>
     {children}
   </div>
 );

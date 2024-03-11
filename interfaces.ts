@@ -31,3 +31,26 @@ export interface IActivity {
   title: string;
   desc: string;
 }
+
+interface IProductData {
+  title: string;
+  src: string;
+  description: string;
+  company?: string;
+}
+
+interface IWine extends IProductData {
+  country?: {
+    icon: JSX.Element;
+    title: string;
+  };
+  type: "Wine";
+  category: string;
+  alcohol: number;
+  store: {
+    title: string;
+    url: string;
+  }
+}
+
+export type IProduct = IWine;

@@ -1,7 +1,6 @@
 import { TSocialMedia } from "@/interfaces";
 import axios from "axios";
 
-
 export async function getFollowers(): Promise<Record<TSocialMedia, number | undefined>> {
 
   const instagram = await getIGFollowers();
@@ -34,6 +33,7 @@ export async function getTiktokLikes(): Promise<TFollowersLikes> {
 
   const t = element.innerText;
   const regex = /"heartCount":(\d+)/;
+  // eslint-disable-next-line no-unused-vars
   const [_, likes] = t.match(regex) || [undefined, undefined];
 
   return likes ? parseInt(likes) : undefined;

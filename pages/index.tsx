@@ -5,10 +5,7 @@ import AppComponents from '@/app/components/AppComponents';
 import DetailsList, { IDetailsListItem } from '@/app/components/AppComponents/DetailsList';
 import Maps from '@/app/components/Maps';
 import { appImages, maps_url } from '@/parameters';
-import { InstagramEmbed, TikTokEmbed } from 'react-social-media-embed';
-import { FaInstagram, FaTiktok } from "react-icons/fa6";
 import styles from './Home.module.scss';
-import Buttons from '@/app/components/Buttons';
 import SocialPosts from '@/app/components/SocialPosts';
 
 export default function Home(): JSX.Element {
