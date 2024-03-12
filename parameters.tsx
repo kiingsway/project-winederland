@@ -33,6 +33,8 @@ export const images: IImage[] = [
 
 export const socialmedia_posts: Record<TSocialMedia, IImage[]> = {
   instagram: [
+    { alt: 'IG thumb 3', src: './IG thumb 3.png' },
+    { alt: 'Invitation Image', src: './Invitation Image.png' },
     { alt: 'Winederland Invitation', src: './Winederland Invitation.jpg' },
   ],
   tiktok: [
