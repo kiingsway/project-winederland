@@ -9,7 +9,7 @@ const appPagesData: Omit<IAppPageData, 'onClick'>[] = [
   { key: 'WinesActivities', title: 'Wines and Activities' },
   // { key: 'WineBar', title: 'Wine Bar' },
   // { key: 'Activities', title: 'Activities' },
-  { key: 'Gallery', title: 'Gallery' },
+  // { key: 'Gallery', title: 'Gallery' },
   { key: 'About', title: 'About us' },
 ];
 

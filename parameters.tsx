@@ -5,15 +5,15 @@ import { PT, CA, US, DE, CL, ES } from "country-flag-icons/react/3x2";
 export const slogan = "Uncork the Magic!";
 
 export const socialmedia_usernames: Record<TSocialMedia, string> = {
-  instagram: "winederland__",
-  tiktok: "winederland_ilac",
+  instagram: process.env.NEXT_PUBLIC_IG_USER || "",
+  tiktok: process.env.NEXT_PUBLIC_TT_USER || "",
   whatsapp: ""
 };
 
 export const socialmedia_urls: Record<TSocialMedia, string> = {
   instagram: `https://www.instagram.com/${socialmedia_usernames.instagram}/`,
   tiktok: `https://www.tiktok.com/@${socialmedia_usernames.tiktok}/`,
-  whatsapp: "https://chat.whatsapp.com/IzV0DKeklUlBIIULpDjaBu",
+  whatsapp: `https://chat.whatsapp.com/${process.env.NEXT_PUBLIC_WHATSAPP_GROUPID}`,
 };
 
 export const socialmedia_profile: Record<TSocialMedia, string> = {
