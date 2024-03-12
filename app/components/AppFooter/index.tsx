@@ -1,52 +1,49 @@
 import React from 'react';
 import styles from './AppFooter.module.scss';
 import { DateTime } from 'luxon';
-import { FaInstagram, FaTiktok } from "react-icons/fa6";
 import { Tooltip } from 'antd';
 import Buttons from '../Buttons';
-import { socialmedia_urls, socialmedia_usernames } from '@/parameters';
-import { FaWhatsapp } from "react-icons/fa";
+import { social_info } from '@/parameters';
+import { TSocialMedia } from '@/interfaces';
 
 export default function AppFooter(): JSX.Element {
-
-  const { instagram: insta_url, tiktok: tiktok_url, whatsapp: whatsapp_url } = socialmedia_urls;
-  const year = DateTime.now().toFormat('yyyy');
 
   return (
     <div className={styles.Main}>
 
-      <Left>
-        <span>© {year} Winederland</span>
+      <div className={styles.Main_Left}>
+        <span>© {DateTime.now().toFormat('yyyy')} Winederland</span>
         <span>All Rights Reserved</span>
-      </Left>
+      </div>
 
-      <Center>
+      <div className={styles.Main_Center}>
         <span>Follow us</span>
         <div className={styles.Main_Right_Social}>
-          <Tooltip title={`Instagram: @${socialmedia_usernames.instagram}`}>
-            <Buttons.Link className={styles.Main_Right_Social_Button} size="large" icon={<FaInstagram />} href={insta_url} />
-          </Tooltip>
-          <Tooltip title={`Tiktok: @${socialmedia_usernames.tiktok}`}>
-            <Buttons.Link className={styles.Main_Right_Social_Button} size="large" icon={<FaTiktok />} href={tiktok_url} />
-          </Tooltip>
-          <Tooltip title={`WhatsApp`}>
-            <Buttons.Link className={styles.Main_Right_Social_Button} size="large" icon={<FaWhatsapp />} href={whatsapp_url} />
-          </Tooltip>
+          <SocialLinks />
         </div>
-      </Center>
+      </div>
 
     </div>
   );
 }
 
-const Left = ({ children }: React.PropsWithChildren): JSX.Element => (
-  <div className={styles.Main_Left}>
-    {children}
-  </div>
-);
+const SocialLinks = (): JSX.Element => (
+  <>
+    {Object.keys(social_info).map(sm => {
 
-const Center = ({ children }: React.PropsWithChildren): JSX.Element => (
-  <div className={styles.Main_Center}>
-    {children}
-  </div>
+      const { app, url, user, icon } = { ...social_info[sm as TSocialMedia], app: sm as TSocialMedia };
+
+      const title = sm + (user ? `: @${user}` : '');
+
+      return (
+        <Tooltip title={title} key={app}>
+          <Buttons.Link
+            className={styles.Main_Right_Social_Button}
+            size="large"
+            icon={icon}
+            href={url} />
+        </Tooltip>
+      );
+    })}
+  </>
 );

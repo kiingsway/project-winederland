@@ -52,13 +52,13 @@ export default function Home(): JSX.Element {
 
         <Col span={24} md={12}>
           <AppComponents.Box className={styles.SocialMediaBox}>
-            <SocialPosts socialMedia='instagram' />
+            <SocialPosts socialMedia='Instagram' />
           </AppComponents.Box>
         </Col>
 
         <Col span={24} md={12}>
           <AppComponents.Box className={styles.SocialMediaBox}>
-            <SocialPosts socialMedia='tiktok' />
+            <SocialPosts socialMedia='TikTok' />
           </AppComponents.Box>
         </Col>
 

@@ -12,6 +12,7 @@ import type { Metadata } from "next";
 import { getPathName, rawText } from '@/app/services/helpers';
 import AppFooter from '@/app/components/AppFooter';
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { appImages } from '@/parameters';
 import useSWR, { SWRConfiguration } from 'swr';
 import { getFollowers } from '@/app/services/requests';
@@ -66,6 +67,7 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
     <ConfigProvider theme={{ algorithm: theme.darkAlgorithm }}>
       <Head><title>{page_title}</title></Head>
       <Analytics />
+      <SpeedInsights />
       <AppContext.Provider value={appProviderValue}>
         <Layout className='app' style={{ backgroundImage }}>
           <Header className='app-header'>

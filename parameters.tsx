@@ -1,26 +1,67 @@
 import { TImages, TImage, TSocialMedia, IImage, IActivity, IProduct } from "./interfaces";
 import background_image from '@/public/Winery Barrels Background.jpg';
 import { PT, CA, US, DE, CL, ES } from "country-flag-icons/react/3x2";
+import { FaInstagram, FaTiktok, FaWhatsapp } from "react-icons/fa6";
 
 export const slogan = "Uncork the Magic!";
 
-export const socialmedia_usernames: Record<TSocialMedia, string> = {
-  instagram: "winederland__",
-  tiktok: "winederland_ilac",
-  whatsapp: ""
-};
+interface ISocialInfo {
+  url: string;
+  icon: JSX.Element;
+  profile?: string;
+  user?: string;
+  desc?: string;
+  posts?: IImage[];
+}
 
-export const socialmedia_urls: Record<TSocialMedia, string> = {
-  instagram: `https://www.instagram.com/${socialmedia_usernames.instagram}/`,
-  tiktok: `https://www.tiktok.com/@${socialmedia_usernames.tiktok}/`,
-  whatsapp: `https://chat.whatsapp.com/IzV0DKeklUlBIIULpDjaBu`,
-};
+export const social_info: Record<TSocialMedia, ISocialInfo> = (() => {
 
-export const socialmedia_profile: Record<TSocialMedia, string> = {
-  instagram: "./Winederland Invitation.jpg",
-  tiktok: "./ttk profile.jpeg",
-  whatsapp: ""
-};
+  const [ig_user, tt_user] = ["winederland__", "winederland_ilac"];
+  const [ig_profile, tt_profile] = ["./Winederland Invitation.jpg", "./ttk profile.jpeg"];
+  const [ig_icon, tt_icon, wa_icon] = [<FaInstagram key='ig' />, <FaTiktok key='tt' />, <FaWhatsapp key='wa' />];
+  const [ig_followers, tt_likes] = [31, 2];
+
+  const [ig_url, tt_url, wa_url] = [
+    `https://www.instagram.com/${ig_user}/`,
+    `https://www.tiktok.com/@${tt_user}/`,
+    "https://chat.whatsapp.com/IzV0DKeklUlBIIULpDjaBu"
+  ];
+
+  const { ig_posts, tt_posts } = {
+    ig_posts: [
+      { alt: 'IG thumb 3', src: './IG thumb 3.png' },
+      { alt: 'Invitation Image', src: './Invitation Image.png' },
+      { alt: 'Winederland Invitation', src: './Winederland Invitation.jpg' },
+    ],
+    tt_posts: [
+      { alt: 'Invitation Video Thumbnail', src: './Invitation Video Thumbnail.png' },
+    ]
+  };
+
+  return {
+    Instagram: {
+      profile: ig_profile,
+      user: ig_user,
+      url: ig_url,
+      icon: ig_icon,
+      desc: `${ig_followers} followers`,
+      posts: ig_posts,
+    },
+    TikTok: {
+      profile: tt_profile,
+      user: tt_user,
+      url: tt_url,
+      icon: tt_icon,
+      desc: `${tt_likes} likes`,
+      posts: tt_posts,
+    },
+    WhatsApp: {
+      url: wa_url,
+      icon: wa_icon,
+
+    },
+  };
+})();
 
 export const images: IImage[] = [
   { alt: 'Winederland Invitation', src: './Winederland Invitation.jpg' },
@@ -30,18 +71,6 @@ export const images: IImage[] = [
   { alt: 'Invitation Image', src: './Invitation Image.png' },
   { alt: 'Invitation Video Thumbnail', src: './Invitation Video Thumbnail.png' },
 ];
-
-export const socialmedia_posts: Record<TSocialMedia, IImage[]> = {
-  instagram: [
-    { alt: 'IG thumb 3', src: './IG thumb 3.png' },
-    { alt: 'Invitation Image', src: './Invitation Image.png' },
-    { alt: 'Winederland Invitation', src: './Winederland Invitation.jpg' },
-  ],
-  tiktok: [
-    { alt: 'Invitation Video Thumbnail', src: './Invitation Video Thumbnail.png' },
-  ],
-  whatsapp: [],
-};
 
 export const wine_sections = [
   {
@@ -80,8 +109,8 @@ export const appImages: Record<TImages, TImage> = {
   Activities: { alt: "Blinding Wine", src: "./Blinding Wine.jpg" },
   WineBar: { alt: "Wines Image", src: "./Wines.jpg" },
   Gallery: { alt: "Wine Photoshoot", src: "./Wine Photoshoot.jpeg" },
-  WinederlandLogo: { alt: "Winederland White Logo", src: "./Winederland White logo.png" },
-  ILACLogo: { alt: "ILAC Logo", src: "./ILAC Logo.png" },
+  WinederlandLogo: { alt: "Winederland White Logo", src: "./company/Winederland White logo.png" },
+  ILACLogo: { alt: "ILAC Logo", src: "./company/ILAC Logo.png" },
 };
 
 export const maps_url = `https://maps.google.com/maps?width=100%25&height=300&hl=en&q=43.6721418,-79.37624821570263+(ILAC+Dreaming+Building)&t=&z=15&ie=UTF8&iwloc=B&output=embed`;

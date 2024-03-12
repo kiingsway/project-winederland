@@ -1,11 +1,9 @@
 import React from 'react';
 import styles from './SocialPosts.module.scss';
-import { FaInstagram, FaTiktok } from "react-icons/fa6";
 import { Avatar, Col, Row, Image } from 'antd';
-import { socialmedia_posts, socialmedia_profile, socialmedia_urls, socialmedia_usernames } from '@/parameters';
 import { linkProps } from '@/app/services/helpers';
 import { TSocialMedia } from '@/interfaces';
-import { AppContext, IAppContext } from '@/pages/_app';
+import { social_info } from '@/parameters';
 
 interface Props {
   socialMedia: TSocialMedia;
@@ -13,39 +11,12 @@ interface Props {
 
 export default function SocialPosts({ socialMedia }: Props): JSX.Element {
 
-  const { socialmedia_followers } = React.useContext(AppContext) as IAppContext;
-  const [followers, setFollowers] = React.useState<Record<TSocialMedia, number | undefined>>({ instagram: undefined, tiktok: undefined, whatsapp: undefined });
+  const parameters = social_info[socialMedia];
 
-  React.useEffect(() => {
-    setFollowers(prev => {
-      const instagram = socialmedia_followers?.instagram || prev.instagram;
-      const tiktok = socialmedia_followers?.tiktok || prev.tiktok;
-      return { instagram, tiktok, whatsapp: prev.whatsapp };
-    });
-  }, [socialmedia_followers]);
-
-  const ig_parameters = {
-    link: socialmedia_urls.instagram,
-    user: socialmedia_usernames.instagram,
-    icon: <FaInstagram />,
-    desc: followers.instagram ? `${followers.instagram} followers` : undefined,
-    posts: socialmedia_posts.instagram,
-    profile: socialmedia_profile.instagram,
-  };
-
-  const tk_parameters = {
-    link: socialmedia_urls.tiktok,
-    user: socialmedia_usernames.tiktok,
-    icon: <FaTiktok />,
-    desc: followers.tiktok ? `${followers.tiktok} likes` : undefined,
-    posts: socialmedia_posts.tiktok,
-    profile: socialmedia_profile.tiktok,
-  };
-
-  const parameters = socialMedia === 'instagram' ? ig_parameters : tk_parameters;
+  if (!parameters) return <></>;
 
   return (
-    <a className={styles.Main} {...linkProps} href={parameters.link}>
+    <a className={styles.Main} {...linkProps} href={parameters.url}>
       <div className={styles.Main_AppIcon}>
         {parameters.icon}
       </div>
@@ -58,7 +29,7 @@ export default function SocialPosts({ socialMedia }: Props): JSX.Element {
         </div>
       </div>
       <Row className={styles.Main_Posts}>
-        {parameters.posts.map(post => {
+        {parameters.posts?.map(post => {
           const { alt, src } = post;
           return (
             <Col key={alt} span={24 / 3}>

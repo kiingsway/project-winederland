@@ -3,11 +3,11 @@ import axios from "axios";
 
 export async function getFollowers(): Promise<Record<TSocialMedia, number | undefined>> {
 
-  const instagram = await getIGFollowers();
-  const tiktok = await getTiktokLikes();
-  const whatsapp = undefined;
+  const Instagram = await getIGFollowers() || 31;
+  const TikTok = await getTiktokLikes() || 2;
+  const WhatsApp = undefined;
 
-  return { instagram, tiktok, whatsapp };
+  return { Instagram, TikTok, WhatsApp };
 }
 
 type TFollowersLikes = number | undefined;
