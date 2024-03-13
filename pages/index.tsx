@@ -2,39 +2,13 @@ import React from 'react';
 import { Col, Row } from 'antd';
 import '@/app/styles/AppScroll.css';
 import AppComponents from '@/app/components/AppComponents';
-import DetailsList, { IDetailsListItem } from '@/app/components/AppComponents/DetailsList';
+import DetailsList from '@/app/components/AppComponents/DetailsList';
 import Maps from '@/app/components/Maps';
-import { appImages, maps_url } from '@/parameters';
+import { appImages, detailsListItems, maps_url } from '@/parameters';
 import styles from './Home.module.scss';
 import SocialPosts from '@/app/components/SocialPosts';
 
 export default function Home(): JSX.Element {
-
-  const detailsListItems: IDetailsListItem[] = [
-    {
-      label: 'Date',
-      description: "March 15th, 2024"
-    },
-    {
-      label: 'Address',
-      description: "425 Bloor St E, Toronto, ON M4X 1L7\n4th Floor"
-    },
-    {
-      label: 'Nearest Station',
-      description: "Sherbourne"
-    },
-    {
-      label: "From 920 Yonge St. to Dreaming Building"
-    },
-    {
-      label: 'via Church Street 1.2km, 17min',
-      description: "Head south on Yonge St and turn left on Church St. Continue on Church St and turn left on Bloor Street East."
-    },
-    {
-      label: 'via Bloor Street 1.3km, 19min',
-      description: "Head south on Yonge St and turn left on Bloor Street East."
-    },
-  ];
 
   return (
     <>

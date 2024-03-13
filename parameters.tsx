@@ -2,6 +2,7 @@ import { TSocialMedia, IImage, IActivity, IProduct, ISocialInfo } from "./interf
 import background_image from '@/public/Winery Barrels Background.webp';
 import { PT, CA, US, DE, CL, ES } from "country-flag-icons/react/3x2";
 import { FaInstagram, FaTiktok, FaWhatsapp } from "react-icons/fa6";
+import { IDetailsListItem } from "./app/components/AppComponents/DetailsList";
 
 export const slogan = "Uncork the Magic!";
 
@@ -80,6 +81,32 @@ export const images: IImage[] = [
 ];
 
 export const maps_url = `https://maps.google.com/maps?width=100%25&height=300&hl=en&q=43.6721418,-79.37624821570263+(ILAC+Dreaming+Building)&t=&z=15&ie=UTF8&iwloc=B&output=embed`;
+
+export const detailsListItems: IDetailsListItem[] = [
+  {
+    label: 'Date',
+    description: "March 15th, 2024"
+  },
+  {
+    label: 'Address',
+    description: "425 Bloor St E, Toronto, ON M4X 1L7\n4th Floor"
+  },
+  {
+    label: 'Nearest Station',
+    description: "Sherbourne"
+  },
+  {
+    label: "From 920 Yonge St. to Dreaming Building"
+  },
+  {
+    label: 'via Church Street 1.2km, 17min',
+    description: "Head south on Yonge St and turn left on Church St. Continue on Church St and turn left on Bloor Street East."
+  },
+  {
+    label: 'via Bloor Street 1.3km, 19min',
+    description: "Head south on Yonge St and turn left on Bloor Street East."
+  },
+];
 
 export const activities: IActivity[] = [
   {
