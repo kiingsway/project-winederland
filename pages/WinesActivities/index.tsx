@@ -3,7 +3,7 @@ import { activities, appImages, products } from '@/parameters';
 import { Col, Modal, Row, Image, Button } from 'antd';
 import React from 'react';
 import WineContainer from './WineContainer';
-import WineSection from '../WineBar/WineSection';
+import WineSection from './WineSection';
 import { makeKey } from '@/app/services/helpers';
 import styles from './WinesActivities.module.scss';
 import { FaWineBottle } from "react-icons/fa";
@@ -19,7 +19,7 @@ export default function WinesActivities(): JSX.Element {
 
   return (
     <>
-      <AppComponents.Image  {...appImages.Activities} />
+      <AppComponents.Image  {...appImages.WinesActivities} />
 
       <AppComponents.Text.Section>Bar</AppComponents.Text.Section>
 

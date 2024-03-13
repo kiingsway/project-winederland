@@ -1,41 +1,48 @@
-import { TImages, TImage, TSocialMedia, IImage, IActivity, IProduct } from "./interfaces";
-import background_image from '@/public/Winery Barrels Background.jpg';
+import { TSocialMedia, IImage, IActivity, IProduct, ISocialInfo } from "./interfaces";
+import background_image from '@/public/Winery Barrels Background.webp';
 import { PT, CA, US, DE, CL, ES } from "country-flag-icons/react/3x2";
 import { FaInstagram, FaTiktok, FaWhatsapp } from "react-icons/fa6";
 
 export const slogan = "Uncork the Magic!";
 
-interface ISocialInfo {
-  url: string;
-  icon: JSX.Element;
-  profile?: string;
-  user?: string;
-  desc?: string;
-  posts?: IImage[];
-}
+export const description_about = `Winederland is an event sponsored by ILAC, organized yearly for a wine tasting extravaganza. It's a celebration of all things wine, where enthusiasts gather to explore a variety of wines from around the world. The event features tastings, masterclasses, and opportunities to learn from experts in the field. Whether you're a seasoned connoisseur or just beginning to discover the world of wine, Winederland offers an unforgettable experience that delights the senses and expands your palate. Join us for an unforgettable journey into the world of wine!`;
+
+export const appImages = {
+  AppBackground: { alt: "App Background Winery Image", src: background_image.src },
+  WinederlandLogo: { alt: "Winederland White Logo", src: "./company/Winederland White logo.png" },
+  ILACLogo: { alt: "ILAC Logo", src: "./company/ILAC Logo.png" },
+  Home: { alt: "Winery Image", src: "./winefield.webp" },
+  WinesActivities: { alt: "Blinding Wine", src: "./Blinding-Wine.webp" },
+  About: { alt: "ILAC Dreaming Building", src: "./ILAC-Dreaming-Building.webp" },
+  IGThumb1: { alt: 'Instagram Post Thumbnail 1', src: './posts/ig1.webp' },
+  IGThumb2: { alt: 'Instagram Post Thumbnail 2', src: './posts/ig2.webp' },
+  IGThumb3: { alt: 'Instagram Post Thumbnail 3', src: './posts/ig3.webp' },
+  TTThumb1: { alt: 'TikTok Post Thumbnail 1', src: './posts/tt1.webp' },
+  TTThumb2: { alt: 'TikTok Post Thumbnail 2', src: './posts/tt2.webp' },
+  Invitation1: { alt: 'Invitation Image', src: './Invitation Image.webp' },
+  Invitation2: { alt: 'Winederland Invitation', src: './Winederland Invitation.webp' },
+  EventMap: { alt: 'Event Map', src: './Event Map.webp' },
+  DraftDecoration1: { alt: 'Draft of decoration on ILAC Building', src: './Decoration.webp' },
+  DraftDecoration2: { alt: 'Love Sign Decoration', src: './Love Sign Decoration.webp' },
+  TTProfile: { alt: "TikTok Image Profile", src: "./posts/ttk-profile.webp" }
+};
 
 export const social_info: Record<TSocialMedia, ISocialInfo> = (() => {
 
   const [ig_user, tt_user] = ["winederland__", "winederland_ilac"];
-  const [ig_profile, tt_profile] = ["./Winederland Invitation.jpg", "./ttk profile.jpeg"];
+  const [ig_profile, tt_profile] = [appImages.Invitation2.src, appImages.TTProfile.src];
   const [ig_icon, tt_icon, wa_icon] = [<FaInstagram key='ig' />, <FaTiktok key='tt' />, <FaWhatsapp key='wa' />];
-  const [ig_followers, tt_likes] = [31, 2];
+  const [ig_followers, tt_likes] = [34, 4];
 
   const [ig_url, tt_url, wa_url] = [
     `https://www.instagram.com/${ig_user}/`,
     `https://www.tiktok.com/@${tt_user}/`,
-    "https://chat.whatsapp.com/IzV0DKeklUlBIIULpDjaBu"
+    "https://chat.whatsapp.com/IzV0DKeklUlBIIULpDjaBu/"
   ];
 
   const { ig_posts, tt_posts } = {
-    ig_posts: [
-      { alt: 'IG thumb 3', src: './IG thumb 3.png' },
-      { alt: 'Invitation Image', src: './Invitation Image.png' },
-      { alt: 'Winederland Invitation', src: './Winederland Invitation.jpg' },
-    ],
-    tt_posts: [
-      { alt: 'Invitation Video Thumbnail', src: './Invitation Video Thumbnail.png' },
-    ]
+    ig_posts: [appImages.IGThumb3, appImages.IGThumb2, appImages.IGThumb1],
+    tt_posts: [appImages.TTThumb2, appImages.TTThumb1],
   };
 
   return {
@@ -64,81 +71,40 @@ export const social_info: Record<TSocialMedia, ISocialInfo> = (() => {
 })();
 
 export const images: IImage[] = [
-  { alt: 'Winederland Invitation', src: './Winederland Invitation.jpg' },
-  { alt: 'Event Map', src: './Event Map.jpg' },
-  { alt: 'Draft of decoration on ILAC Building', src: './Decoration.png' },
-  { alt: 'Love Sign Decoration', src: './Love Sign Decoration.png' },
-  { alt: 'Invitation Image', src: './Invitation Image.png' },
-  { alt: 'Invitation Video Thumbnail', src: './Invitation Video Thumbnail.png' },
+  appImages.Invitation2,
+  appImages.EventMap,
+  appImages.DraftDecoration1,
+  appImages.DraftDecoration2,
+  appImages.Invitation1,
+  appImages.TTThumb1,
 ];
-
-export const wine_sections = [
-  {
-    key: "red wine",
-    image: "./red-wine.webp",
-    desc: "Red wine is a type of wine made from dark-colored grape varieties. The color of red wine can range from intense violet to brick red, and it gets its color from the grape skins that are included during fermentation. Red wine is typically richer and more complex in flavor compared to white wine, with flavors that can vary depending on the grape variety and region. Common flavors in red wine include fruits like cherry, plum, and raspberry, as well as earthy, spicy, and floral notes. Red wine is often aged in oak barrels, which can impart additional flavors and aromas. It is enjoyed around the world and is often paired with a variety of foods."
-  },
-  {
-    key: "white wine",
-    image: "./white-wine.webp",
-    desc: "White wine is a type of wine made from green or yellowish grapes. Unlike red wine, white wine is fermented without the grape skins, which gives it its lighter color. White wines can range from pale yellow to golden amber in color, and they are known for their crisp and refreshing taste. Flavors in white wine can vary widely depending on the grape variety and region, but common flavors include citrus, apple, pear, and tropical fruits. White wine is often aged in stainless steel tanks or oak barrels, which can affect its flavor and aroma. It is typically served chilled and pairs well with a variety of foods, including seafood, poultry, and light pasta dishes."
-  },
-  {
-    key: "sparkling wine",
-    image: "./sparkling-wine.webp",
-    desc: "Sparkling wine is a carbonated wine known for its effervescence, created through secondary fermentation. It's typically made using the traditional method (like Champagne) or the Charmat method. Sparkling wines vary in sweetness from extra brut (very dry) to doux (very sweet). They can be white or rosé, with flavors ranging from crisp and citrusy to creamy and nutty. Common types include Champagne, Prosecco, Cava, and sparkling rosé. Sparkling wines are often associated with celebrations and are enjoyed on their own or paired with a variety of foods, from appetizers to desserts."
-  },
-  {
-    key: "rose wine",
-    image: "./rose-wine.webp",
-    desc: "Rosé wine is a refreshing and versatile wine that derives its pink color from brief contact with grape skins. It can range in color from pale salmon to deep pink, with flavors spanning from dry and fruity to sweet and floral. Rosé is made from a variety of red grapes and is produced worldwide. It's known for its light body, crisp acidity, and bright fruit flavors, making it a perfect summer sipper. Rosé pairs well with a wide range of foods, from light salads and seafood to grilled meats and spicy dishes. Its popularity has surged in recent years due to its approachable nature and ability to please a variety of palates."
-  },
-  {
-    key: "grape juice",
-    image: "./grape-juice.webp",
-    desc: "Grape juice is a non-alcoholic beverage made from crushed grapes. It's a sweet and flavorful drink enjoyed by all ages. It's rich in vitamins, antioxidants, and natural sugars, making it a healthy and refreshing choice."
-  }
-];
-
-export const description_about = `Winederland is an event sponsored by ILAC, organized yearly for a wine tasting extravaganza. It's a celebration of all things wine, where enthusiasts gather to explore a variety of wines from around the world. The event features tastings, masterclasses, and opportunities to learn from experts in the field. Whether you're a seasoned connoisseur or just beginning to discover the world of wine, Winederland offers an unforgettable experience that delights the senses and expands your palate. Join us for an unforgettable journey into the world of wine!`;
-
-export const appImages: Record<TImages, TImage> = {
-  AppBackground: { alt: "App Background Winery Image", src: background_image.src },
-  Home: { alt: "Winery Image", src: "./winefield.jpg" },
-  About: { alt: "ILAC Dreaming Building", src: "./ILAC Dreaming Building.jpg" },
-  Activities: { alt: "Blinding Wine", src: "./Blinding Wine.jpg" },
-  WineBar: { alt: "Wines Image", src: "./Wines.jpg" },
-  Gallery: { alt: "Wine Photoshoot", src: "./Wine Photoshoot.jpeg" },
-  WinederlandLogo: { alt: "Winederland White Logo", src: "./company/Winederland White logo.png" },
-  ILACLogo: { alt: "ILAC Logo", src: "./company/ILAC Logo.png" },
-};
 
 export const maps_url = `https://maps.google.com/maps?width=100%25&height=300&hl=en&q=43.6721418,-79.37624821570263+(ILAC+Dreaming+Building)&t=&z=15&ie=UTF8&iwloc=B&output=embed`;
 
 export const activities: IActivity[] = [
   {
     title: 'Wine Tasting/Sommelier',
-    image: './Blind Wine Tasting.jpg',
+    image: './activities/Blind Wine Tasting.webp',
     desc: "Discover your inner sommelier! Join us for a unique wine tasting experience. Our guided activity will take you through a selection of carefully curated wines, helping you learn about different grape varieties, wine regions, and tasting techniques. Our experts will be on hand to guide you, enhancing your tasting skills. By the end, you'll feel confident in selecting and pairing wines like a pro. Don't miss this opportunity to become a wine connoisseur!"
   },
   {
     title: 'Guess the Wine Making Process',
-    image: './Wine Making Process.png',
+    image: './activities/Wine Making Process.webp',
     desc: "Test your wine knowledge with our 'Guess the Wine Making Process' activity. Learn about the intricate steps involved in making wine while trying to match each wine with its correct production process. From harvesting to fermentation and aging, challenge yourself to identify the unique characteristics of each wine and the methods used to create them. A fun and educational experience for wine enthusiasts of all levels!"
   },
   {
     title: "Mapping Game",
-    image: "./Pin Map.png",
+    image: "./activities/Pin Map.webp",
     desc: "Players are asked a wine-related question. They then have to place a pin on a world map to indicate their answer. The player who gets closest to the correct location wins.",
   },
   {
     title: "Ain and Win",
-    image: "./Ring Toss.png",
+    image: "./activities/Ring Toss.webp",
     desc: "In this game, players try to toss rings onto the necks of wine bottles. Each successful toss earns points, and the player with the highest score after a set number of tosses wins.",
   },
   {
     title: "Cork Contest",
-    image: "./Corks in the Jar.webp",
+    image: "./activities/Corks in the Jar.webp",
     desc: "A jar or container is filled with wine corks, and players have to guess the number of corks inside. The player who guesses closest to the actual number wins a prize.",
   },
 ];
@@ -147,7 +113,7 @@ export const products: IProduct[] = [
   {
     country: { title: "Portugal", icon: <PT width={16} style={{ flex: '1 0 auto' }} /> },
     title: "Lab Red Lisboa VR",
-    src: "./wines/Lab Red Lisboa VR.png",
+    src: "./wines/Lab Red Lisboa VR.webp",
     type: "Wine",
     category: "Red Blend",
     alcohol: 13,
@@ -161,7 +127,7 @@ export const products: IProduct[] = [
   {
     country: { title: "Canada", icon: <CA width={16} style={{ flex: '1 0 auto' }} /> },
     title: "Colio Cellar Door Series Sauvignon Blanc",
-    src: "./wines/Colio Cellar Door Series Sauvignon Blanc.png",
+    src: "./wines/Colio Cellar Door Series Sauvignon Blanc.webp",
     type: "Wine",
     category: "Sauvignon Blanc",
     alcohol: 12.5,
@@ -175,7 +141,7 @@ export const products: IProduct[] = [
   {
     country: { title: "California, United States", icon: <US width={16} style={{ flex: '1 0 auto' }} /> },
     title: "Chloe Rosé",
-    src: "./wines/Chloe Rosé.png",
+    src: "./wines/Chloe Rosé.webp",
     type: "Wine",
     category: "Rosé",
     alcohol: 13,
@@ -189,7 +155,7 @@ export const products: IProduct[] = [
   {
     country: { title: "Ontario, Canada", icon: <CA width={16} style={{ flex: '1 0 auto' }} /> },
     title: "Vieni Sparkling Riesling",
-    src: "./wines/Vieni Sparkling Riesling.png",
+    src: "./wines/Vieni Sparkling Riesling.webp",
     type: "Wine",
     category: "Sparkling Riesling",
     alcohol: 9,
@@ -203,7 +169,7 @@ export const products: IProduct[] = [
   {
     country: { title: "German", icon: <DE width={16} style={{ flex: '1 0 auto' }} /> },
     title: "CARL JUNG CUVÉE",
-    src: "./wines/Carl Jung Cuvée.png",
+    src: "./wines/Carl Jung Cuvée.webp",
     type: "Wine",
     category: "Red",
     alcohol: 0.2,
@@ -217,7 +183,7 @@ export const products: IProduct[] = [
   {
     country: { title: "Maipo Valley, Chile", icon: <CL width={16} style={{ flex: '1 0 auto' }} /> },
     title: "Tarapacá De-Alcoholized Sauvignon Blanc",
-    src: "./wines/Tarapacá Sauvignon Blanc.png",
+    src: "./wines/Tarapacá Sauvignon Blanc.webp",
     type: "Wine",
     category: "Sauvignon Blanc",
     alcohol: 0.5,
@@ -230,7 +196,7 @@ export const products: IProduct[] = [
   {
     country: { title: "Canada", icon: <CA width={16} style={{ flex: '1 0 auto' }} /> },
     title: "Unwined Smooth Rosé",
-    src: "./wines/Unwined Smooth Rosé.png",
+    src: "./wines/Unwined Smooth Rosé.webp",
     type: "Wine",
     category: "Rosé",
     alcohol: 12.5,
@@ -244,7 +210,7 @@ export const products: IProduct[] = [
   {
     country: { title: "Utiel-Requena, Spain", icon: <ES width={16} style={{ flex: '1 0 auto' }} /> },
     title: "Luna De Murviedro",
-    src: "./wines/Luna De Murviedro.png",
+    src: "./wines/Luna De Murviedro.webp",
     type: "Wine",
     category: "Sparkling Rose",
     alcohol: 0.01,

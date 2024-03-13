@@ -1,8 +1,12 @@
 import { TFunction } from 'i18next';
 
+// eslint-disable-next-line no-unused-vars
+export type TAppPages = (push: (path: string) => void) => IAppPageData[];
+export type IProduct = IWine;
 export type TNextTranslation = TFunction<"translation", undefined>;
-
 export type TImages = "AppBackground" | "Home" | "About" | "Activities" | "WineBar" | "Gallery" | "WinederlandLogo" | "ILACLogo";
+export type TSocialMedia = 'Instagram' | 'TikTok' | 'WhatsApp';
+
 export interface TImage {
   src: string;
   alt: string;
@@ -13,11 +17,6 @@ export interface IAppPageData {
   title: string;
   onClick(): void;
 }
-
-// eslint-disable-next-line no-unused-vars
-export type TAppPages = (push: (path: string) => void) => IAppPageData[];
-
-export type TSocialMedia = 'Instagram' | 'TikTok' | 'WhatsApp';
 
 export interface IImage {
   src: string;
@@ -53,4 +52,11 @@ interface IWine extends IProductData {
   }
 }
 
-export type IProduct = IWine;
+export interface ISocialInfo {
+  url: string;
+  icon: JSX.Element;
+  profile?: string;
+  user?: string;
+  desc?: string;
+  posts?: IImage[];
+}

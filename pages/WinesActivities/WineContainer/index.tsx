@@ -18,7 +18,9 @@ export default function WineContainer({ product, onClick }: Props): JSX.Element 
 
   if (product.type === 'Wine') return (
     <div className={styles.WineContainer} onClick={onClick}>
-      <Image alt={product.title} src={product.src} width={100} preview={false} />
+      <div className={styles.WineContainer_Image}>
+        <Image alt={product.title} src={product.src} width={100} preview={false} />
+      </div>
       <div className={styles.WineContainer_Details}>
         <ProductLabel icon={product.country?.icon}><h2>{product.title}</h2></ProductLabel>
         <ProductLabel icon={<FaWineBottle />} title='Blend'>{product.category}</ProductLabel>
